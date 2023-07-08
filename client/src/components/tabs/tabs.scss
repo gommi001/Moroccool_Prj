@@ -1,0 +1,23 @@
+ 
+ .tabs h1 {
+    padding: 1rem;
+    position: relative;
+    margin-bottom: 2%;
+    
+  }
+ .tabs h1::after{
+    content: '';
+    background: #f12c2c;
+    width: 120px;
+    height: 5px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .tob{
+    background-color: #ead9b2;
+    border-radius: 5px;
+  }
+   

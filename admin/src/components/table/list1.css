@@ -1,0 +1,23 @@
+.img{
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+.status{
+    padding: 5px;
+    border-radius: 5px;
+}
+.status.Approved{
+    color: green;
+    background-color: rgb(204, 248, 204);
+}
+.status.Denied{
+    color: red;
+    background-color: rgb(243, 214, 214);
+}
+.status.Pending{
+    color: goldenrod;
+    background-color: rgb(240, 240, 195);
+}

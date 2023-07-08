@@ -1,0 +1,22 @@
+.btm{
+    writing-mode: vertical-lr;
+    position: sticky;
+    top: 30%;
+    z-index: 1;
+    margin-top: 4%; 
+}
+
+.navbtm{
+    justify-content: space-around;
+    background-color: transparent;
+}
+
+.navbtm :hover{
+    background-color: transparent;
+}
+
+@media (max-width: 767px) {
+    .btm {
+        display: none;
+    }
+}

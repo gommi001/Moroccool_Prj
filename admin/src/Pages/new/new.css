@@ -1,0 +1,75 @@
+.new{
+    width: 100%;
+    display: flex;
+}
+.newContainer{
+    flex: 2;
+}
+.ntop , .nbottom{
+    display: flex;
+    -webkit-box-shadow: 2px 4px 10px 3px rgba(0,0,0,0.47); 
+    box-shadow: 2px 4px 10px 3px rgba(182, 179, 179, 0.37);
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+}
+h1{
+    color: rgb(150, 148, 148);
+    font-size: 20px;
+    font-weight: 700;
+}
+.left{
+    flex: 1;
+    align-items: center;
+}
+.right{
+    flex: 2;
+}
+.nimg{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: solid;
+    border-color: gray;
+}
+form{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    justify-content: space-between;
+}
+.formInput{
+    width: 40%;
+}
+input{
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid rgb(196, 194, 194);
+}
+button{
+    cursor: pointer;
+    width: 140px;
+    padding: 10px;
+    border: none;
+    background-color: rgb(118, 38, 192);
+    color: antiquewhite;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 60%;
+}
+button:hover{
+    background-color: burlywood;
+    color: beige;
+}
+.icon8{
+    color: aliceblue;
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgb(104, 94, 197);
+    border-radius: 20px;
+}
+.icon8:hover{
+    background-color: burlywood;
+}

@@ -1,0 +1,55 @@
+.heading {
+    padding: 2.5rem;
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 2%;
+  }
+  
+  .heading::after{
+    content: '';
+    background: #f12c2c;
+    width: 120px;
+    height: 5px;
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+  
+  }
+
+  .sername{
+    font-weight: 600;
+  }
+
+.table {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);         
+  }
+
+  .done{
+    color: green;
+  }
+
+  .icon_close{
+    color: red;
+  }
+    
+
+  table {
+    border: 2px solid transparent ;
+    width: 500px;
+    height: 200px;
+    
+  }
+    
+  th {
+    border-bottom: 1px solid transparent;
+  }
+    
+  td {
+    text-align: center;
+    border-bottom: 1px solid gray;
+  }
