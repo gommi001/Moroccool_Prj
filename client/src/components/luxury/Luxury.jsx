@@ -50,7 +50,7 @@ const Luxury = () => {
         
         </div>
         
-        <button style={{}}>View More...</button> 
+        <Link to='/destination'><button style={{}}>More Destinations...</button></Link>
         
         
     </div>

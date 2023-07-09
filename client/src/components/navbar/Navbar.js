@@ -24,7 +24,7 @@ function Navbar() {
     return (
         <div name='home' className={nav ? 'navbar navbar-bg active' : 'navbar'}>
             <div className={nav ? 'logo dark' : 'logo'}>
-                <h2>Morocco Tours</h2>
+                <Link to='/'><h2 style={{color:'black'}}>Moroccool.</h2></Link>
             </div>
             <ul className="nav-menu">
                 <Link to='/'><li>Home</li></Link>
@@ -47,7 +47,7 @@ function Navbar() {
 
                 <Link to='/events'><li>Events</li></Link>
                 
-                <Link to='find'>
+                
                     <li>
                     <div class="dropdown">
                             <span class="dropbtn">Things To Do <KeyboardArrowDownIcon fontSize='small'/></span>
@@ -59,7 +59,7 @@ function Navbar() {
                             </div>
                         </div>
                     </li>
-                </Link>
+                
                 <Link to='views'>
                     <li>
                     <div class="dropdown">
@@ -78,7 +78,7 @@ function Navbar() {
 
             </ul>
             <div className="nav-icons">
-                <BiSearch className='icon' style={{ marginRight: '1rem' }} />
+                <Link to='/'><BiSearch className='icon' style={{ marginRight: '1rem' }} /></Link>
                 <div class="dropdown">
                             <span class="dropbtn"><LanguageOutlinedIcon className='icon' style={{ marginRight: '1rem' }} /></span>
                             <div class="dropdown-content">
@@ -102,13 +102,19 @@ function Navbar() {
 
             <div className={nav ? 'mobile-menu active' : 'mobile-menu'}>
                 <ul className="mobile-nav">
-                <Link to='home'><li>Home</li></Link>
+                <Link to='/'><li>Home</li></Link>
                 <Link to='/destination'><li>Destinations</li></Link>
                 <Link to='/events'><li>Events</li></Link>
-                <Link to='search'><li>Things To Do</li></Link>
-                <Link to='views'><li>Book</li></Link>
+                <Link to='/things/cafres'><li>Things To Do</li></Link>
+                <Link to=''><li>Book</li></Link>
                 </ul>
-                
+                <div className="social-icons">
+                        <FaFacebook className='icon' />
+                        <FaInstagram className='icon' />
+                        <FaTwitter className='icon' />
+                        <FaPinterest className='icon' />
+                        <FaYoutube className='icon' />
+                    </div>
             </div>
 
         </div>

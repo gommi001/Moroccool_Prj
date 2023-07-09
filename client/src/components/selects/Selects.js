@@ -10,7 +10,7 @@ function Selects() {
     return (
         <div name='views' className='selects'>
             <h1>Exclusive Events</h1>
-            <p>Discover Traditional and New Events</p>
+            <h5>Discover Traditional and New Events</h5>
             
             <div className='container'>
                 <SelectsImg bgImg='https://gcdn.imgix.net/events/les-princesses-du-chaabi-de-retour-a-la-fol-1.jpeg?w=450&h=450&fit=crop&crop=entropy&auto=format,compress&q=80' text='Bidawa Maroc' />

@@ -12,7 +12,7 @@ function ScrollToTop() {
 
   return (
     <Div>
-      <a href="#" className={`${visible ? "block" : "none"}`}>
+      <a href="#" className={`${visible ? "arrow" : "none"}`}>
         <KeyboardArrowUpIcon />
       </a>
     </Div>

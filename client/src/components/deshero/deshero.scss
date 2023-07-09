@@ -56,6 +56,20 @@
       }
 }
 
+.hero_btn{
+    background-image: linear-gradient(45deg,#008443 0%, #0084423d 100%);
+  border: 1px solid #008443;
+  color: #fff;
+  padding: .7rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+
+  :hover{
+    background-color: linear-gradient(45deg,#ff7070 0%,#e22020 100%);
+  }
+}
+
 .form .inp[type=text] {
     border: transparent;
     background-color: transparent;
@@ -71,7 +85,9 @@
 
 .form .icon {
     color: white;
+    
 }
+
 
 .dropdown_data {
     background-color: white;

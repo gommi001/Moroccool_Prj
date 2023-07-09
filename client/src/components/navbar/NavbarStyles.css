@@ -176,6 +176,7 @@ select{
         display: flex;
         justify-content: space-around;
         margin: 1rem 0;
+        margin-bottom: 40px;
     }
 
     .social-icons .icon:hover {

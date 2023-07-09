@@ -36,7 +36,7 @@ const DesHero = () => {
                     </div>
 
                     <div>
-                        <button onClick={() => onSearch(value)}><AiOutlineSearch className='icon'/></button>
+                        <button className='hero_btn' onClick={() => onSearch(value)}><AiOutlineSearch className='icon'/></button>
                     </div>
                    
                 </form>

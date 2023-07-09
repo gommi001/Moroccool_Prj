@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import Navbar from '../../../components/navbar/Navbar'
 import HeroDes from '../../../components/heroDes/HeroDes'
 import Selects from '../../../components/selects/Selects'
@@ -17,35 +17,74 @@ import FooterBanner from "../../../components/footbanner/FooterBanner"
 
 
 const Fes = () => {
+
+  const [temperature, setTemperature] = useState('');
+  const [humidity, setHumidity] = useState('');
+  const [WindSpeed, setWindSpeed] = useState('');
+  const [clouds, setClouds] = useState('');
+  const [tempmax, setTempMax] = useState('');
+
+  /* const url = ; */
+
+  useEffect(() => {
+    fetch(
+      'https://api.openweathermap.org/data/2.5/weather?q=Fes&appid=b2747cf8f61c26a33e39ddb183dc29bb&units=metric'
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.main) {
+          setTemperature(data.main.temp);
+          setHumidity(data.main.humidity);
+          setWindSpeed(data.wind.speed);
+          setClouds(data.weather[0].description);
+          setTempMax(data.main.temp_max);
+        } else {
+          console.log('Unable to retrieve humidity data');
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching weather data:', error);
+      });
+  }, []);
+
   return (
     <div className='fes'>
       <div className="app1">
         <div className="container1">
           <div className="top1">
             <div className="temp1">
-              <h1> <p><CloudIcon fontSize='x-large'/></p> 60 °F</h1>
+              <h1>
+                {' '}
+                <p>
+                  <CloudIcon fontSize="x-large" />
+                </p>
+                <h1>{temperature}°C</h1>
+              </h1>
             </div>
-        </div>
+          </div>
           <div className="bottom1">
-            <div className="feels">
-              <p className='bold1'>60 °F</p>
-              <p>Feels Like</p>
+          <div className="wind">
+              <p className="bold">
+              {clouds}
+              </p>
+              <p><CloudIcon fontSize="medium" /></p>
             </div>
+            
             <div className="humidity">
-              <p className='bold'>2%</p>
+              <p className="bold">{humidity}%</p>
               <p>Humidity</p>
             </div>
             <div className="wind">
-              <p className='bold'>15 MPH</p>
-              <p>Wind Speed</p>
+              <p className="bold">{WindSpeed}KMH</p>
+              <p>Wind</p>
             </div>
-            <div className="wind">
-              <p className='bold'><WbSunnyIcon fontSize='medium' /></p>
-              <p>Clear</p>
-            </div>
+            <div className="feels">
+              <p className="bold1">{tempmax}°C</p>
+              <p>Temp max</p>
+            </div>           
           </div>
+        </div>
       </div>
-    </div>
       <Navbar/>
       <HeroDes
         image="https://images.unsplash.com/photo-1512958789358-4effcbe171a0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGZlcyUyMG1vcm9jY298ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
@@ -73,6 +112,7 @@ const Fes = () => {
         Cras justo odio, dapibus ac facilisis in, egestas eget quam.
         Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
         Praesent commodo cursus magna, vel scelerisque nisl consectetur et.'
+        link1='/destination/fes'
         
 
         img2='https://images.unsplash.com/photo-1539020140153-e479b8c22e70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG1vcm9jY298ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'
@@ -81,7 +121,7 @@ const Fes = () => {
         Cras justo odio, dapibus ac facilisis in, egestas eget quam.
         Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
         Praesent commodo cursus magna, vel scelerisque nisl consectetur et.'
-        
+        link2='/destination/fes'
 
         img3='https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9yb2Njb3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
         title3='Rabat'
@@ -89,6 +129,7 @@ const Fes = () => {
         Cras justo odio, dapibus ac facilisis in, egestas eget quam.
         Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
         Praesent commodo cursus magna, vel scelerisque nisl consectetur et.'
+        link3='/destination/fes'
         
 
       />

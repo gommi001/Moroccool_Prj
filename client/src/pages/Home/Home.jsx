@@ -2,6 +2,7 @@ import Navbar from "../../components/navbar/Navbar"
 import "./home.scss"
 import Hero from "../../components/hero/Hero"
 import Destinations from '../../components/destinations/Destinations'
+import DesHero from '../../components/deshero/DesHero'
 import Luxury from "../../components/luxury/Luxury"
 import Driver from "../../components/driver/Driver"
 import Selects from "../../components/selects/Selects"
@@ -22,7 +23,7 @@ const Home = () => {
     <div className='home'>
       
         <Navbar/>
-        <Hero/>
+        <DesHero/>
         <ScrollToTop/>
         <Luxury/>
         <Destinations/> 

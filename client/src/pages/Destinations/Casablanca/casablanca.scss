@@ -69,12 +69,18 @@
 
 .bold1 {
   font-weight: 700;
+  text-transform: capitalize;
+}
+
+.temp{
+  font-size: 3.5rem;
 }
 
 .box p {
   padding: 1rem;
   position: relative;
   margin-bottom: 2%;
+  
 }
 .box p::after{
   content: '';
@@ -90,4 +96,8 @@
 .box p {
 font-size: 20px;
 font-weight: 600;
+}
+
+.bold{
+  text-transform: capitalize;
 }
