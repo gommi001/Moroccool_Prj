@@ -14,7 +14,7 @@ import useFetch from '../../hooks/useFetch';
 
 const Find = (props) => {
 
-  const {data, loading, error, reFetch}=useFetch("/cafes/countByCity?cities=casablanca,meknes,fes,rabat,marrakech,essaouira,tanger,agadir");
+  //const {data, loading, error, reFetch}=useFetch("/cafes/countByCity?cities=casablanca,meknes,fes,rabat,marrakech,essaouira,tanger,agadir");
   
   
   return (
