@@ -1,4 +1,4 @@
-import "./single.css"
+import "./updatehotel.css"
 import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar"
 import Chart from "../../components/charts/Chart"
@@ -13,6 +13,7 @@ const Single = () => {
   const location= useLocation()
   const id = location.pathname.split("/")[2]
   const { data, loading, error } = useFetch(`/hotels/find/${id}`);
+  
 
   return (
     <div className="single">

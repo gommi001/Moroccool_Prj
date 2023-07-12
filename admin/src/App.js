@@ -7,14 +7,21 @@ import {
 } from "react-router-dom";
 import Login from "./Pages/login/Login";
 import List from "./Pages/list/List";
-import Single from "./Pages/single/Single";
+import Single from "./Pages/updateUser/UpdateUser";
 import NewHotel from "./Pages/newHotel/NewHotel"
-import New from "./Pages/new/New";
+import NewUser from "./Pages/newUser/NewUser";
+import NewEvent from "./Pages/newEvent/NewEvent";
 import { productInputs, userInputs } from "./formSource";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
-import { cafeColumns, hotelColumns, userColumns } from "./datatablesource";
+import { cafeColumns, hotelColumns, userColumns, eventColumns } from "./datatablesource";
 import NewCafe from "./Pages/newCafe/NewCafe";
+import UpdateHotel from "./Pages/updateHotel/UpdateHotel";
+import UpdateUser from "./Pages/updateUser/UpdateUser";
+import UpdateEvent from './Pages/updateEvent/UpdateEvent'
+import UpdateCafe from './Pages/updateCafe/UpdateCafe'
+
+
 
 function App() {
 
@@ -42,6 +49,9 @@ function App() {
                 </ProtectedRoute>
               }
             />
+
+////////////////// Users //////////////////////
+
             <Route path="users">
               <Route 
               index 
@@ -49,20 +59,22 @@ function App() {
                 <ProtectedRoute>
                   <List columns={userColumns}/>
                 </ProtectedRoute>} />
-              <Route path=":userId" 
+              <Route path="update/:id" 
               element={
                 <ProtectedRoute>
-                  <Single />
+                  <UpdateUser />
                 </ProtectedRoute>
               }
                />
               <Route path="new" 
               element={
                 <ProtectedRoute>
-                  <New inputs={ userInputs } title="Add New Users" />
+                  <NewUser inputs={ userInputs } title="Add New Users" />
                 </ProtectedRoute>
               } />
             </Route>
+
+ ////////////////// Cafes //////////////////////
            
             <Route path="cafes">
               <Route index 
@@ -71,11 +83,13 @@ function App() {
                   <List columns={cafeColumns} />
                 </ProtectedRoute>
               } />
-              <Route path=":productId" 
+
+              <Route path=":" 
               element={
                 <ProtectedRoute>
-                  <Single />
-                </ProtectedRoute>}
+                  <UpdateCafe />
+                </ProtectedRoute>
+              }
                />
                
               <Route path="new" 
@@ -87,6 +101,8 @@ function App() {
               } />              
             </Route>
 
+////////////////// Hotels //////////////////////
+
             <Route path="hotels">
               <Route 
               index 
@@ -94,10 +110,10 @@ function App() {
                 <ProtectedRoute>
                   <List columns={hotelColumns}/>
                 </ProtectedRoute>} />
-              <Route path=":userId" 
+                <Route path=":hotelId" 
               element={
                 <ProtectedRoute>
-                  <Single />
+                  <UpdateHotel />
                 </ProtectedRoute>
               }
                />
@@ -108,7 +124,33 @@ function App() {
                 </ProtectedRoute>
               } />
             </Route>
-          </Route> 
+
+////////////////// Events //////////////////////
+
+            <Route path="events">
+              <Route 
+              index 
+              element={
+                <ProtectedRoute>
+                  <List columns={eventColumns}/>
+                </ProtectedRoute>} />
+                <Route path=":hotelId" 
+              element={
+                <ProtectedRoute>
+                  <UpdateEvent />
+                </ProtectedRoute>
+              }
+               />
+              <Route path="new" 
+              element={
+                <ProtectedRoute>
+                  <NewEvent />
+                </ProtectedRoute>
+              } />
+            </Route>
+
+            
+        </Route> 
         </Routes>
       </BrowserRouter>
     </div>

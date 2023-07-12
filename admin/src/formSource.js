@@ -1,3 +1,6 @@
+
+///////////////// Users /////////////
+
 export const userInputs = [
   {
     id: "username",
@@ -30,6 +33,8 @@ export const userInputs = [
   },
 ];
  
+///////////////// Cafes /////////////
+
 export const cafeInputs = [
   {
     id: "name",
@@ -50,25 +55,21 @@ export const cafeInputs = [
     placeholder: "Meknes",
   },
   {
-    id: "address",
-    label: "Address",
+    id: "location",
+    label: "Location",
     type: "text",
     placeholder: "Meknes - Hamria",
   },
   {
-    id: "title",
-    label: "Title",
-    type: "text",
-    placeholder: "Be Comfortable Here",
-  },
-  {
-    id: "desc",
-    label: "Description",
-    type: "text",
-    placeholder: "description",
+    id: "map",
+    label: "Map",
+    type: "url",
+    placeholder: "Embeed Map",
   },
 
 ];
+
+///////////////// Hotels /////////////
 
 export const hotelInputs = [
   {
@@ -90,22 +91,63 @@ export const hotelInputs = [
     placeholder: "Meknes",
   },
   {
-    id: "address",
-    label: "Address",
+    id: "phone",
+    label: "Phone",
     type: "text",
-    placeholder: "Meknes - Hamria",
+    placeholder: "ex : 063597...",
   },
+  {
+    id: "location",
+    label: "Location",
+    type: "text",
+    placeholder: "Maarif - Casablanca",
+  },
+  {
+    id: "map",
+    label: "Map Link",
+    type: "url",
+    placeholder: "embeed google map link ",
+  },
+ 
+];
+///////////////// Events /////////////
+
+export const eventInputs = [
   {
     id: "title",
     label: "Title",
     type: "text",
-    placeholder: "The best Hotel",
+    placeholder: "My Event",
   },
   {
-    id: "desc",
-    label: "Description",
+    id: "type",
+    label: "Type",
     type: "text",
-    placeholder: "description",
+    placeholder: "Summer/Winter...",
   },
-
+  {
+    id: "city",
+    label: "City",
+    type: "text",
+    placeholder: "Casablanca",
+  },
+  {
+    id: "location",
+    label: "Location",
+    type: "text",
+    placeholder: "Maarif - Casablanca",
+  },
+  {
+    id: "date",
+    label: "Date",
+    type: "date",
+    
+  },
+  {
+    id: "price",
+    label: "Price",
+    type: "number",
+    placeholder: "Enter the price",
+  },
+ 
 ];

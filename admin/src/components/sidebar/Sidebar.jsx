@@ -10,6 +10,9 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import SettingsApplicationsOutlinedIcon from '@mui/icons-material/SettingsApplicationsOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import { Link } from "react-router-dom";
+import LocalActivityIcon from '@mui/icons-material/LocalActivity';
+
+
 
 const Sidebar = () => {
 
@@ -50,14 +53,10 @@ const Sidebar = () => {
               <span>Hotels</span>
             </li>
             </Link>
+            <Link to="/events" style={{textDecoration:"none"}} >
             <li>
-              <span className="icon"><LocalShippingIcon/></span>
-              <span>Delivery</span>
-            </li>
-            <Link to="/" style={{textDecoration:"none"}} >
-            <li>
-              <span className="icon"><QueryStatsIcon/></span>
-              <span>Your Statistics</span>
+              <span className="icon"><LocalActivityIcon/></span>
+              <span>Events</span>
             </li>
             </Link>
             <p className="title">User</p>

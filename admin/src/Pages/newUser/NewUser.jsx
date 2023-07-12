@@ -4,6 +4,8 @@ import Navbar from "../../components/navbar/Navbar";
 import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
 import { useState } from "react";
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
+
 
 const New = ({inputs, title}) => {
 
@@ -15,22 +17,15 @@ const New = ({inputs, title}) => {
     setInfo(prev =>({...prev,[e.target.id] : e.target.value}))
   };
 
+  const navigate = useNavigate()
+
   const handleClick =async e =>{
     e.preventDefault()
     const data= new FormData()
-    data.append("file", file)
-    data.append("upload_preset", "upload")
-    try{
-      const uploadRes = axios.post(
-        "https://api.cloudinary.com/v1_1/moroccool/image/upload",
-        data
-        )
-
-    const { url }= (await uploadRes).data;
-
-    const newUser = {
+    try{ 
+      const newUser = {
       ...info,
-      img: url,
+     
     };
 
     await axios.post("/auth/register", newUser)
@@ -38,6 +33,7 @@ const New = ({inputs, title}) => {
     }catch(err){
       console.log(err)
     }
+    navigate("/users")
   }
 
   return (
@@ -49,30 +45,9 @@ const New = ({inputs, title}) => {
           <h1 className="nTitle"> {title} </h1>
         </div>
         <div className="nbottom">
-          <div className="left">
-            <img 
-              
-              alt="" 
-              className="nimg" 
-              src={file ? URL.createObjectURL(file) 
-                : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg" 
-              } 
-            />
-          </div>
+          
           <div className="right">
             <form>
-              <div className="formInput">
-                <label htmlFor="file" > 
-                  User Image  <CloudUploadOutlinedIcon className="icon8" /> 
-                </label>
-                <input 
-                  type="file" 
-                  id="file" 
-                  onChange={e=>setFile(e.target.files[0])}
-                  style={{ display:"none" }} 
-                />
-              </div>
-
               {inputs.map((input)=>(             
                 <div className="formInput" key={input.id}>
                   <label> {input.label} </label>
@@ -84,6 +59,15 @@ const New = ({inputs, title}) => {
                   />
                 </div>
               ))}
+
+          <h1 className='titre'>Admin Option</h1>
+              <div className="formInput">
+                <label>Admin</label>
+                <select id="" onChange={handleChange}>
+                  <option value={false}>No</option>
+                  <option value={true}>Yes</option>
+                </select>
+              </div>
 
               <button onClick={handleClick}>Save</button>
             </form>

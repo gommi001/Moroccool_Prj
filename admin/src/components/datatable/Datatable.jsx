@@ -1,10 +1,14 @@
 import "./datatable.css";
 import { DataGrid } from '@mui/x-data-grid';
 import { userColumns, userRows } from "../../datatablesource";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 
 const Datatable = ({columns}) => {
@@ -20,21 +24,29 @@ const Datatable = ({columns}) => {
     setList(data);
   },[data]);
 
-  const handleDelete = async (id)=>{
-    try{
+
+  const handleDelete = async (id) => {
+    try {
       await axios.delete(`/${path}/${id}`);
       setList(list.filter((item) => item._id !== id));
-    }catch(err){}
-    
-  }
+      window.location.reload(false)
+    } catch (err) {}
+  };
+
 
   const actionColumn = [{field : "action", headername : "Action", width : 200 , renderCell:(params)=>{
     return(
       <div className="cellAction">
-        <Link to={`/cafes/find/${data.id}`} style={{textDecoration:"none"}}>
-          <div className="viewButton">Display</div>
+        <Link to={`/${path}/${data.id}`} style={{textDecoration:"none"}}>
+          <Button onClick='' style={{width:'100%'}} variant="contained" color="info">
+            Edit
+          </Button>
         </Link>
-        <div className="deleteButton" onClick={() => handleDelete(params.row._id)}>Delete</div>
+              
+        <Button onClick={() => handleDelete(params.row._id)} style={{width:'100%'}} variant="contained" color="error">
+          Delete
+        </Button>
+
       </div>
     )
   }}]
@@ -48,15 +60,26 @@ const Datatable = ({columns}) => {
         </Link>
       </div>
         <DataGrid
+        className="table"
         rows={data}
         columns={columns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
-        checkboxSelection
         getRowId={(row) => row._id}
+        disableSelectionOnClick
+        
       />
     </div>
   )
 }
 
 export default Datatable
+
+
+{/* 
+rows={data}
+        columns={columns.concat(actionColumn)}
+        pageSize={9}
+        rowsPerPageOptions={[9]}
+        getRowId={(row) => row._id}
+*/}

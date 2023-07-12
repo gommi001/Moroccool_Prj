@@ -76,3 +76,7 @@
     background-color: rgb(118, 216, 118);
     color: aliceblue;
 }
+
+.table {
+    outline: none;
+  }
