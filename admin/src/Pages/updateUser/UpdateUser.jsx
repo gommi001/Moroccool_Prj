@@ -30,19 +30,19 @@ const Single = () => {
               <img alt="" className="itemImg" src="https://images.unsplash.com/photo-1533933269825-da140ad3132f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
               />
               <div className="details0">
-                <h1 className="itemTitle">{data.name}</h1>
-                <input />
+                <h1 className="itemTitle">{data.username}</h1>
+                
                 <div className="itemDetail0">
-                  <span className="itemKey1">Type :</span>
-                  <span className="itemValue">{data.type}</span>
+                  <span className="itemKey1">Email :</span>
+                  <span className="itemValue">{data.email}</span>
                 </div>
                 <div className="itemDetail0">
                   <span className="itemKey0">Phone  :</span>
-                  <span className="itemValue">+212(06) 93-777-628</span>
+                  <span className="itemValue">{data.phone}</span>
                 </div>
                 <div className="itemDetail0">
-                  <span className="itemKey0">Address  :</span>
-                  <span className="itemValue">{data.location}</span>
+                  <span className="itemKey0">Role  :</span>
+                  <span className="itemValue">{data.role}</span>
                 </div>
                 <div className="itemDetail0">
                   <span className="itemKey0">City :</span>

@@ -25,7 +25,7 @@ const New = ({inputs, title}) => {
     try{ 
       const newUser = {
       ...info,
-     
+      
     };
 
     await axios.post("/auth/register", newUser)
@@ -60,12 +60,12 @@ const New = ({inputs, title}) => {
                 </div>
               ))}
 
-          <h1 className='titre'>Admin Option</h1>
+          <h1 className='titre'>User Role Option</h1>
               <div className="formInput">
-                <label>Admin</label>
-                <select id="" onChange={handleChange}>
-                  <option value={false}>No</option>
-                  <option value={true}>Yes</option>
+                <label>Role : </label>
+                <select id="role" onChange={handleChange}>
+                  <option value="user">User</option>
+                  <option value="admin">Admin</option>
                 </select>
               </div>
 

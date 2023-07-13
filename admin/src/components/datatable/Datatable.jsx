@@ -11,10 +11,11 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 
 
-const Datatable = ({columns}) => {
+const Datatable = ({columns}, props ) => {
 
   const location = useLocation();
   const path = location.pathname.split("/")[1];
+  const id = location.pathname.split("/")[2];
   const [list, setList] = useState();
   const {data, loading, error} = useFetch(`/${path}`)
 
@@ -32,13 +33,14 @@ const Datatable = ({columns}) => {
       window.location.reload(false)
     } catch (err) {}
   };
+  
 
 
   const actionColumn = [{field : "action", headername : "Action", width : 200 , renderCell:(params)=>{
     return(
       <div className="cellAction">
-        <Link to={`/${path}/${data.id}`} style={{textDecoration:"none"}}>
-          <Button onClick='' style={{width:'100%'}} variant="contained" color="info">
+        <Link to={`/${path}/${params.row._id}`} style={{textDecoration:"none"}}>
+          <Button style={{width:'100%'}} variant="contained" color="info">
             Edit
           </Button>
         </Link>

@@ -59,7 +59,7 @@ function App() {
                 <ProtectedRoute>
                   <List columns={userColumns}/>
                 </ProtectedRoute>} />
-              <Route path="update/:id" 
+              <Route path=":id" 
               element={
                 <ProtectedRoute>
                   <UpdateUser />
@@ -84,7 +84,7 @@ function App() {
                 </ProtectedRoute>
               } />
 
-              <Route path=":" 
+              <Route path=":id" 
               element={
                 <ProtectedRoute>
                   <UpdateCafe />
@@ -110,7 +110,7 @@ function App() {
                 <ProtectedRoute>
                   <List columns={hotelColumns}/>
                 </ProtectedRoute>} />
-                <Route path=":hotelId" 
+                <Route path=":id" 
               element={
                 <ProtectedRoute>
                   <UpdateHotel />
@@ -134,7 +134,7 @@ function App() {
                 <ProtectedRoute>
                   <List columns={eventColumns}/>
                 </ProtectedRoute>} />
-                <Route path=":hotelId" 
+                <Route path=":id" 
               element={
                 <ProtectedRoute>
                   <UpdateEvent />
