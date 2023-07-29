@@ -10,18 +10,20 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import {Link} from 'react-router-dom'
 
-import './NavbarStyles.css'
+/* import './NavbarStyles.css' */
+import './stylene.css'
+import './nave.js'
 import { AuthContext } from '../../context/AuthContext'
 
 
 
 function Navbar() {
-    const [nav, setNav] = useState(false)
+   /*  const [nav, setNav] = useState(false)
     const handleNav = () => setNav(!nav)
 
-    const { user } = useContext(AuthContext);
+    const { user } = useContext(AuthContext); */
 
-    return (
+   /*  return (
         <div name='home' className={nav ? 'navbar navbar-bg active' : 'navbar'}>
             <div className={nav ? 'logo dark' : 'logo'}>
                 <Link to='/'><h2 style={{color:'black'}}>Moroccool.</h2></Link>
@@ -118,7 +120,150 @@ function Navbar() {
             </div>
 
         </div>
-    )
+    ) */
+
+  
+    return (
+        <header class="header">
+        <div class="container">
+          <div class="wrapper">
+            <div class="header-item-left">
+              <h1><a href="#" class="brand">Logo</a></h1>
+            </div>
+            <div class="header-item-center">
+              <div class="overlay"></div>
+              <nav class="menu">
+                <div class="menu-mobile-header">
+                  <button type="button" class="menu-mobile-arrow"><KeyboardArrowDownIcon fontSize='small'/></button>
+                  <div class="menu-mobile-title"></div>
+                  <button type="button" class="menu-mobile-close"><i class="ion ion-ios-close"></i></button>
+                </div>
+                <ul class="menu-section">
+                  <li><a href="#">Home</a></li>
+                  <li class="menu-item-has-children">
+                    <a href="#">What's New <KeyboardArrowDownIcon fontSize='small'/></a>
+                    <div class="menu-subs menu-mega menu-column-4">
+                      <div class="list-item text-center">
+                        <a href="#">
+                          <img src="./asset/image-1.jpg" class="responsive" alt="New Product"/>
+                          <h4 class="title">Product 1</h4>
+                        </a>
+                      </div>
+                      <div class="list-item text-center">
+                        <a href="#">
+                          <img src="./asset/image-2.jpg" class="responsive" alt="New Product"/>
+                          <h4 class="title">Product 2</h4>
+                        </a>
+                      </div>
+                      <div class="list-item text-center">
+                        <a href="#">
+                          <img src="./asset/image-3.jpg" class="responsive" alt="New Product"/>
+                          <h4 class="title">Product 3</h4>
+                        </a>
+                      </div>
+                      <div class="list-item text-center">
+                        <a href="#">
+                          <img src="./asset/image-4.jpg" class="responsive" alt="New Product"/>
+                          <h4 class="title">Product 4</h4>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a href="#">Category <KeyboardArrowDownIcon fontSize='small'/></a>
+                    <div class="menu-subs menu-mega menu-column-4">
+                      <div class="list-item">
+                        <h4 class="title">Men's Fashion</h4>
+                        <ul>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                        </ul>
+                        <h4 class="title">Kid's Fashion</h4>
+                        <ul>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                        </ul>
+                      </div>
+                      <div class="list-item">
+                        <h4 class="title">Women's Fashion</h4>
+                        <ul>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                        </ul>
+                        <h4 class="title">Health & Beauty</h4>
+                        <ul>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                        </ul>
+                      </div>
+                      <div class="list-item">
+                        <h4 class="title">Home & Lifestyle</h4>
+                        <ul>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                          <li><a href="#">Product List</a></li>
+                        </ul>
+                      </div>
+                      <div class="list-item">
+                        <img src="./asset/image-5.jpg" class="responsive" alt="Shop Product"/>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a href="#">Articles <KeyboardArrowDownIcon fontSize='small'/></a>
+                    <div class="menu-subs menu-column-1">
+                      <ul>
+                        <li><a href="#">Article One</a></li>
+                        <li><a href="#">Article Two</a></li>
+                        <li><a href="#">Article Three</a></li>
+                        <li><a href="#">Article Four</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a href="#">Accounts <KeyboardArrowDownIcon fontSize='small'/></a>
+                    <div class="menu-subs menu-column-1">
+                      <ul>
+                        <li><a href="#">Login and Register</a></li>
+                        <li><a href="#">Help and Question</a></li>
+                        <li><a href="#">Privacy and Policy</a></li>
+                        <li><a href="#">Term of Cookies</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="header-item-right">
+              <a href="#" class="menu-icon"><i class="ion ion-md-search"></i></a>
+              <a href="#" class="menu-icon">Login</a>
+              <a href="#" class="menu-icon"><i class="ion ion-md-cart"></i></a>
+              <button type="button" class="menu-mobile-trigger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+    );
 }
 
 export default Navbar
