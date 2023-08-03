@@ -46,8 +46,8 @@ function Navbar() {
                                 <Link to='/destination/essaouira'> Essaouira </Link>
                                 <Link to='/destination/tangier'> Tangier </Link>
                             </div>
-                        </div>
-                    </li>
+                    </li>                        </div>
+
                 </Link>
 
                 <Link to='/events'><li>Events</li></Link>
@@ -214,7 +214,9 @@ function Navbar() {
         <div class="row v-center">
           <div class="header-item item-left">
             <div class="logo">
-              <a href="#">Moroccool</a>
+              <a href="/">
+                <img src={'./morocoLogo.jpg'} alt='Logo' id='imageLogo'/>
+              </a>
             </div>
           </div>
 
