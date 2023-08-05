@@ -48,7 +48,7 @@ export default function Recommend(props) {
         return (
           <Link to='cafepage'>
             <div className="destination">
-              <img src={destination.image} alt="" />
+              <img className="img_cafe" src={destination.image} alt="" />
               <h3>{destination.title}</h3>
               <p> <LocationOnIcon className="loc_icon" fontSize="small"/> {destination.location}</p>
               <div className="info">
@@ -106,7 +106,7 @@ const Section = styled.section`
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       }
       img {
-        width: 90%;
+        width: 100%;
         border-radius: 1rem;
       }
       .info {

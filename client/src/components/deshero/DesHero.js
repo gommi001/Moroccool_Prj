@@ -27,7 +27,7 @@ const DesHero = () => {
                 <source src={invideo} type='video/mp4' />
             </video>
             <div className="overlay"></div>
-            <div className="content">
+            <div className="des_content">
                 <h1>Find Your Destination</h1>
                 <h2>Top Visited Locations in Morocco</h2>
                 <form className="form">
