@@ -4,7 +4,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -14,8 +13,8 @@ import Alert from '@mui/material/Alert';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-
-
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import { Link } from 'react-router-dom';
 
 const theme = createTheme();
 
@@ -24,7 +23,7 @@ export default function SignInSide() {
   //LOGIN WITH DATABASE
  
   const [credentials, setCredentials] = useState({
-    username:undefined,
+    email:undefined,
     password:undefined
   })
 
@@ -40,19 +39,33 @@ export default function SignInSide() {
     e.preventDefault()
     dispatch({type:"LOGIN_START"})
     try{
-      const res = await axios.post("/auth/login", credentials)
+      const res = await axios.post("/auth/userLogin", credentials)
       dispatch({type:"LOGIN_SUCCESS", payload: res.data.details})
       navigate("/")
-    }catch(err){
-      dispatch({type:"LOGIN_FAIL", payload: err.response.data})
+    }catch (err) {
+      dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
     }
   }
-
 
   // CALLS OUT  ENDS HERE
 
   return (
     <ThemeProvider theme={theme}>
+      <Link to='/'>
+        <NavigateBeforeIcon 
+            style={{
+              position:'absolute',
+              backgroundColor:'white',
+              borderRadius:'50%',
+              left:0,
+              top:30,
+              marginLeft:40,
+              cursor:'pointer',
+              color:'red'
+            }}
+            fontSize='large'
+        />
+      </Link>
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
         <Grid
@@ -90,10 +103,10 @@ export default function SignInSide() {
                 margin="normal"
                 required
                 fullWidth
-                id="username"
-                label="Username"
-                name="username"
-                autoComplete="username"
+                id="email"
+                label="Email"
+                name="email"
+                autoComplete="email"
                 autoFocus
                 onChange={handleChange}
               />
@@ -123,9 +136,9 @@ export default function SignInSide() {
               {error && <Alert severity="info">{error.message}</Alert>}
               <Grid container>
                 <Grid item>
-                  <Link href="/register" variant="body2">
+                  <a href="/register" variant="body2">
                     {"Don't have an account? Sign Up"}
-                  </Link>
+                  </a>
                 </Grid>
               </Grid>
             </Box>
