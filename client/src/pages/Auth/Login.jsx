@@ -1,14 +1,13 @@
-import React from 'react'
-import Navbar from '../../components/navbar/Navbar'
+import React from 'react';
+import Navbar from '../../components/navbar/Navbaryy';
 import Login from '../../components/auth/Login';
-
 
 function SignIn() {
   return (
     <div>
-        <Login/>
+      <Login />
     </div>
-  )
+  );
 }
 
 export default SignIn;
