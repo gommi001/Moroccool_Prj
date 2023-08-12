@@ -1,13 +1,13 @@
-import React from 'react'
-import Navbar from '../../../components/navbar/Navbar'
-import './trip.scss'
+import React from 'react';
+import Navbar from '../../../components/navbar/Navbaryy';
+import './trip.scss';
 
 const Trip = () => {
   return (
-    <div className='trip'>
-      <Navbar/>
+    <div className="trip">
+      <Navbar />
     </div>
-  )
-}
+  );
+};
 
-export default Trip
+export default Trip;

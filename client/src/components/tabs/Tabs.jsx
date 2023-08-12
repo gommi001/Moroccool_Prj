@@ -62,7 +62,7 @@ export default function BasicTabs() {
   };
 
   return (
-    <Box className='tabs' sx={{ width: '95%', marginLeft:3 , marginBottom:10 }}>
+    <Box className='tabs' sx={{ width: '99%', marginBottom:10 }}>
       
       <h1>Best Plans in this City</h1>
       <Box className='tob' sx={{ borderBottom: 1, borderColor: 'divider'}}>
