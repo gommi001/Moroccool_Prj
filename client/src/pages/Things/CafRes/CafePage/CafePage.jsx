@@ -6,7 +6,6 @@ import Featured from '../../../../components/featured/Featured';
 import Data from '../../../../components/services/Data';
 import Test2 from '../../../../components/menu/Test2';
 import CafeMenu from '../../../../components/cafemenu/CafeMenu';
-import MenuCar from '../../../../components/cafemenu/MenuCar';
 import FooterBanner from '../../../../components/footbanner/FooterBanner';
 import Foot from '../../../../components/foot/Footer';
 import ScrollToTop from '../../../../components/ScrollToTop';
@@ -37,7 +36,6 @@ function CafePage({ item }) {
       <Featured />
       <Data />
       <Test2 />
-      <MenuCar />
 
       <FooterBanner />
       <Foot />

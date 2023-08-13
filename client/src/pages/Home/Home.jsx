@@ -15,7 +15,6 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import Description from '../../components/DescMoroccool/Description';
 import ScrollToTop from '../../components/ScrollToTop';
 import Contact from '../../components/Contact';
-import Cont from '../../components/Cont';
 
 const Home = () => {
   return (

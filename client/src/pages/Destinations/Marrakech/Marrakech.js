@@ -5,7 +5,6 @@ import Gallery from '../../../components/gallery/Gallery';
 import GridCat from '../../../components/grid/GridCat';
 import CafeRecommend from '../../../components/CafRecommend';
 import Programs from '../../../components/programs/Programs';
-import Footer from '../../../components/footer/Footer';
 import CloudIcon from '@mui/icons-material/Cloud';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import axios from 'axios';

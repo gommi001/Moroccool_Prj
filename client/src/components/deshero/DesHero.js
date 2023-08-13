@@ -29,7 +29,7 @@ const DesHero = () => {
             <div className="overlay"></div>
             <div className="des_content">
                 <h1>Find Your Destination</h1>
-                <h2>Top Visited Locations in Morocco</h2>
+                <h3>Top Visited Locations in Morocco</h3>
                 <form className="form">
                     <div>
                         <input className='inp' type="text" placeholder='Search destinations' value={value} onChange={onChange}  /> 
@@ -39,8 +39,13 @@ const DesHero = () => {
                         <button className='hero_btn' onClick={() => onSearch(value)}><AiOutlineSearch className='icon'/></button>
                     </div>
                    
+                
                 </form>
-                <div className="dropdown_data">
+                <div className='drop_sear'>
+
+
+
+                <div className="dropdown_data ">
                 {data
                 .filter((item) => {
               const searchTerm = value.toLowerCase();
@@ -63,6 +68,9 @@ const DesHero = () => {
               </div>
             ))}
         </div>
+                </div>
+                
+        
             </div>
         </div>
     

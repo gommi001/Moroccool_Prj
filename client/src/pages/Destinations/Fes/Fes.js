@@ -7,7 +7,6 @@ import CloudIcon from '@mui/icons-material/Cloud';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import Gallery from '../../../components/gallery/Gallery';
 import GridCat from '../../../components/grid/GridCat';
-import Footer from '../../../components/footer/Footer';
 import CafeRecommend from '../../../components/CafRecommend';
 import Tabs from '../../../components/tabs/Tabs';
 import Foot from '../../../components/foot/Footer';

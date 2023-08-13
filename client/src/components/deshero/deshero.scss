@@ -34,7 +34,9 @@
     margin: auto;
     padding: 1rem;
 }
-
+.heroDes1 .des_content > h3{
+    padding-bottom: 69px;
+}
 .form {
     display: flex;
     background-color: #ffffffcc;
@@ -56,6 +58,9 @@
       }
 }
 
+.form .inp {
+    padding-left: 20px;
+}
 .hero_btn{
     background-image: linear-gradient(45deg,#008443 0%, #0084423d 100%);
   border: 1px solid #008443;
@@ -88,15 +93,19 @@
     
 }
 
-
+.drop_sear{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .dropdown_data {
-    background-color: white;
+    background-color: #ffffffcc;
     position: relative;
     display: flex;
     flex-direction: column;
     border: 1px solid gray;
     color: #000;
-    width:100%;
+    width:47%;
     align-items: center;
     border-radius: 8px;
   }
@@ -117,6 +126,9 @@
 @media screen and (max-width: 940px) {
     .form .inp[type=text] {
         max-width: 275px;
+    }
+    .dropdown_data {
+        width: 100%;
     }
 
 }
