@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Footer from '../../../components/footer/Footer';
 import Gallery from '../../../components/gallery/Gallery';
 import HeroDes from '../../../components/heroDes/HeroDes';
 import Navbar from '../../../components/navbar/Navbaryy';

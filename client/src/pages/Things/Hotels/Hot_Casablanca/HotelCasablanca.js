@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../../../../components/footer/Footer';
 import Navbar from '../../../../components/navbar/Navbaryy';
 import HeroDes from '../../../../components/heroDes/HeroDes';
 import useFetch from '../../../../hooks/useFetch';

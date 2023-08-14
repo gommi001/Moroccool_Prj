@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Footer from '../../../components/footer/Footer';
 import Gallery from '../../../components/gallery/Gallery';
 import HeroDes from '../../../components/heroDes/HeroDes';
 import Navbar from '../../../components/navbar/Navbaryy';
@@ -16,8 +15,8 @@ import Box from '@mui/material/Box';
 import Programs from '../../../components/programs/Programs';
 import GridCat from '../../../components/grid/GridCat';
 import Tabs from '../../../components/tabs/Tabs';
-import Foot from '../../../components/foot/Footer';
 import FooterBanner from '../../../components/footbanner/FooterBanner';
+import Foot from '../../../components/foot/Footer';
 
 const Assilah = () => {
   const [data, setData] = useState({});

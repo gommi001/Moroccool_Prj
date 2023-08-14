@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import HeroDes from '../../../components/heroDes/HeroDes';
 import Navbar from '../../../components/navbar/Navbaryy';
 import GridCat from '../../../components/grid/GridCat';
-import Footer from '../../../components/footer/Footer';
 import Gallery from '../../../components/gallery/Gallery';
 import Programs from '../../../components/programs/Programs';
 import CafRecommend from '../../../components/CafRecommend';

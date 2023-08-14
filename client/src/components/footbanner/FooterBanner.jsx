@@ -11,10 +11,10 @@ const Contact = () => {
     <div className="contact">
       <div className="wrapper">
         <h5 className="touch">BE IN TOUCH WITH US:</h5>
-        <div className="mail">
+        {/* <div className="mail">
           <input type="text" placeholder="Enter your e-mail..." />
           <button>JOIN US</button>
-        </div>
+        </div> */}
         <div className="icons">
           <FacebookIcon />
           <InstagramIcon />

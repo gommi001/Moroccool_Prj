@@ -267,7 +267,7 @@ function Navbar() {
                 </li>
                 <li class="menu-item-has-children">
                   <a href="#">
-                    Shop <KeyboardArrowDownIcon fontSize='small'/>
+                    Things To Do <KeyboardArrowDownIcon fontSize='small'/>
                   </a>
                   <div class="sub-menu mega-menu mega-menu-column-4">
                     <div class="list-item">
@@ -409,6 +409,9 @@ function Navbar() {
                       </li>
                     </ul>
                   </div>
+                </li>
+                <li>
+                  <a href="#">About us</a>
                 </li>
                 <li>
                   <a href="#">Contact</a>

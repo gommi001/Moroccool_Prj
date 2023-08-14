@@ -2,7 +2,6 @@ import React from 'react';
 import Navbar from '../../../../components/navbar/Navbaryy';
 import HeroDes from '../../../../components/heroDes/HeroDes';
 import Featured from '../../../../components/featured/Featured';
-import Footer from '../../../../components/footer/Footer';
 import FilterCafe from '../../../../components/FilterCafe';
 import FooterBanner from '../../../../components/footbanner/FooterBanner';
 import Foot from '../../../../components/foot/Footer';
@@ -17,7 +16,8 @@ const HotelPage = () => {
         arcity=""
       />
       <Featured />
-      <Footer />
+      <FooterBanner/>
+      <Foot/>
     </div>
   );
 };

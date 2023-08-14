@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../../../../components/footer/Footer';
 import FindHot from '../../../../components/mainHotels/HotelsDestinations/FindHot';
 import FindTypes from '../../../../components/mainHotels/hoteltypes/FindTypes';
 import Navbar from '../../../../components/navbar/Navbaryy';
@@ -7,6 +6,8 @@ import './hotels.scss';
 import HotRecommend from '../../../../components/HotRecommend';
 import Counter from '../../../../components/counter/Counter';
 import HeroHot from '../../../../components/mainHotels/herohot/HeroHot';
+import FooterBanner from '../../../../components/footbanner/FooterBanner'
+import Footer from '../../../../components/foot/Footer'
 
 const Hotels = () => {
   return (
@@ -17,7 +18,9 @@ const Hotels = () => {
       <FindTypes />
       <Counter />
       <HotRecommend />
-      <Footer />
+      <FooterBanner/>
+      <Footer/>
+
     </div>
   );
 };

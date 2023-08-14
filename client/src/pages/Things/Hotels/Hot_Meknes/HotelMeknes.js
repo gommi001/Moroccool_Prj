@@ -1,7 +1,6 @@
 import React from 'react';
 import HeroDes from '../../../../components/heroDes/HeroDes';
 import Navbar from '../../../../components/navbar/Navbaryy';
-import Footer from '../../../../components/footer/Footer';
 import FilterCafe from '../../../../components/FilterCafe';
 import FooterBanner from '../../../../components/footbanner/FooterBanner';
 import Foot from '../../../../components/foot/Footer';
@@ -15,8 +14,8 @@ const Meknes = () => {
         city="Hotels and Riads in Meknes"
         arcity="مكناس"
       />
-
-      <Footer />
+      <FooterBanner/>
+      <Foot/>
     </div>
   );
 };
