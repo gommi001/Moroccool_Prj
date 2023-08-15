@@ -1,5 +1,5 @@
-import React from "react";
-import "./Footer.scss";
+import React from 'react';
+import './Footer.scss';
 import PaymentIcon from '@mui/icons-material/Payment';
 import PriceChangeIcon from '@mui/icons-material/PriceChange';
 
@@ -24,7 +24,7 @@ const Footer = () => {
           <span>Cookies</span>
         </div>
 
-         <div className="item">
+        <div className="item">
           <h1>About</h1>
           <span>FAQ</span>
           <span>Pages</span>
@@ -32,21 +32,20 @@ const Footer = () => {
           <span>Compare</span>
           <span>Cookies</span>
         </div>
-        
-        
       </div>
       <div className="bottom">
         <div className="left">
-          <span className="logo">Moroccool</span>
-          <span className="copyright">
-            © Copyright 2023. All Rights Reserved
-          </span>
+          <img className="logo" src={'./mainLogo.png'} />
         </div>
+        <span className="copyright">
+          © 2023 Moroccool | Made with ❤️ by Gb-Digital | All Rights Reserved.
+        </span>
+
         <div className="right">
-          <PaymentIcon/>
-          <PriceChangeIcon/>
-          <PaymentIcon/>
-          <PriceChangeIcon/>
+          <PaymentIcon />
+          <PriceChangeIcon />
+          <PaymentIcon />
+          <PriceChangeIcon />
         </div>
       </div>
     </div>

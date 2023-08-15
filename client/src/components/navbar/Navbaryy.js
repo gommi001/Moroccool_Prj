@@ -125,9 +125,8 @@ function Navbar() {
         </div>
     ) */
 
-    const [scrolling, setScrolling] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
   useEffect(() => {
-
     const menu = document.querySelector('.menu');
     const menuMain = menu.querySelector('.menu-main');
     const goBack = menu.querySelector('.go-back');
@@ -206,7 +205,6 @@ function Navbar() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-
   }, []);
   return (
     <header className={`header ${scrolling ? 'scrolled' : ''}`}>
@@ -215,7 +213,7 @@ function Navbar() {
           <div class="header-item item-left">
             <div class="logo">
               <a href="/">
-                <img src={'./morocoLogo.jpg'} alt='Logo' id='imageLogo'/>
+                <img src={'./mainLogo.png'} alt="Logo" id="imageLogo" />
               </a>
             </div>
           </div>
@@ -236,7 +234,7 @@ function Navbar() {
                 </li>
                 <li class="menu-item-has-children">
                   <a href="#">
-                    New <KeyboardArrowDownIcon fontSize='small'/>
+                    New <KeyboardArrowDownIcon fontSize="small" />
                   </a>
                   <div class="sub-menu mega-menu mega-menu-column-4">
                     <div class="list-item text-center">
@@ -267,7 +265,7 @@ function Navbar() {
                 </li>
                 <li class="menu-item-has-children">
                   <a href="#">
-                    Things To Do <KeyboardArrowDownIcon fontSize='small'/>
+                    Things To Do <KeyboardArrowDownIcon fontSize="small" />
                   </a>
                   <div class="sub-menu mega-menu mega-menu-column-4">
                     <div class="list-item">
@@ -373,7 +371,7 @@ function Navbar() {
                 </li>
                 <li class="menu-item-has-children">
                   <a href="#">
-                    Blog <KeyboardArrowDownIcon fontSize='small'/>
+                    Blog <KeyboardArrowDownIcon fontSize="small" />
                   </a>
                   <div class="sub-menu single-column-menu">
                     <ul>
@@ -389,7 +387,7 @@ function Navbar() {
                     </ul>
                   </div>
                 </li>
-                <li class="menu-item-has-children">
+                {/* <li class="menu-item-has-children">
                   <a href="#">
                     Pages <KeyboardArrowDownIcon fontSize='small'/>
                   </a>
@@ -409,7 +407,7 @@ function Navbar() {
                       </li>
                     </ul>
                   </div>
-                </li>
+                </li> */}
                 <li>
                   <a href="#">About us</a>
                 </li>
