@@ -1,17 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { BiSearch } from 'react-icons/bi';
-import { BsPerson } from 'react-icons/bs';
-import { HiOutlineMenuAlt4 } from 'react-icons/hi';
-import { AiOutlineClose } from 'react-icons/ai';
-import {
-  FaFacebook,
-  FaInstagram,
-  FaPinterest,
-  FaTwitter,
-  FaYoutube,
-} from 'react-icons/fa';
-import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
-import FiberNewOutlinedIcon from '@mui/icons-material/FiberNewOutlined';
+
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import { Link } from 'react-router-dom';
@@ -19,6 +7,7 @@ import { Link } from 'react-router-dom';
 import './navStyle.css';
 
 import { AuthContext } from '../../context/AuthContext';
+import logo from '../../assets/moroccol_logo.png'
 
 function Navbar() {
   /*  const [nav, setNav] = useState(false)
@@ -215,7 +204,7 @@ function Navbar() {
           <div class="header-item item-left">
             <div class="logo">
               <a href="/">
-                <img src={'./morocoLogo.jpg'} alt='Logo' id='imageLogo'/>
+                <img src={logo} alt='Logo' id='imageLogo'/>
               </a>
             </div>
           </div>
@@ -371,24 +360,7 @@ function Navbar() {
                     </div>
                   </div>
                 </li>
-                <li class="menu-item-has-children">
-                  <a href="#">
-                    Blog <KeyboardArrowDownIcon fontSize='small'/>
-                  </a>
-                  <div class="sub-menu single-column-menu">
-                    <ul>
-                      <li>
-                        <a href="#">Standard Layout</a>
-                      </li>
-                      <li>
-                        <a href="#">Grid Layout</a>
-                      </li>
-                      <li>
-                        <a href="#">single Post Layout</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
+                
                 <li class="menu-item-has-children">
                   <a href="#">
                     Pages <KeyboardArrowDownIcon fontSize='small'/>
@@ -421,14 +393,8 @@ function Navbar() {
           </div>
 
           <div class="header-item item-right">
-            <a href="#">
-              <i class="fas fa-search"></i>
-            </a>
-            <a href="#">
-              <i class="far fa-heart"></i>
-            </a>
-            <a href="#">
-              <i class="fas fa-shopping-cart"></i>
+            <a href="/login">
+              <button className='btn_nav'>Login</button>
             </a>
 
             <div class="mobile-menu-trigger">
