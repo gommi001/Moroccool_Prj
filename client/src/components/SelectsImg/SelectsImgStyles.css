@@ -2,6 +2,9 @@
     height: 100%;
     width: 100%;
     position: relative;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 1px 10px 2px #00000046; 
+    box-shadow: 1px 1px 10px 2px #00000069;
 }
 
 .selects-location {
