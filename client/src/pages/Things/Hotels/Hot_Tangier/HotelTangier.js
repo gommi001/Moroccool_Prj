@@ -1,7 +1,6 @@
 import React from 'react';
 import HeroDes from '../../../../components/heroDes/HeroDes';
 import Navbar from '../../../../components/navbar/Navbaryy';
-import Test from '../../../../components/test/Test';
 import FilterCafe from '../../../../components/FilterCafe';
 import FooterBanner from '../../../../components/footbanner/FooterBanner';
 import Foot from '../../../../components/foot/Footer';
