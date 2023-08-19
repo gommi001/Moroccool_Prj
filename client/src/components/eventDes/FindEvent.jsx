@@ -14,9 +14,8 @@ import useFetch from '../../hooks/useFetch';
 
 const Find = (props) => {
 
-  //const {data, loading, error, reFetch}=useFetch("/cafes/countByCity?cities=casablanca,meknes,fes,rabat,marrakech,essaouira,tanger,agadir");
-  
-  
+  const {data, loading, error, reFetch}=useFetch("/events/countByCity?cities=casablanca,meknes,fes,rabat,marrakech,essaouira,tanger,agadir,houceima");
+   
   return (
     <div className={styles.find}>
       <div className={styles.heading}>
@@ -58,13 +57,17 @@ const Find = (props) => {
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log('slide change')}
         >
-          
+           {loading ? (
+        "Loading please wait"
+      ) : (
+
+          <>
           <SwiperSlide>
             <Link to='/events/eventcasablanca' style={{color:'#000'}}>
             <Card
               image='https://images.unsplash.com/photo-1581443459255-e895f2a4222f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FzYWJsYW5jYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
               make='Casablanca'
-              desc='10 events'
+              desc={data[0]+" available"}
             />
             </Link>
           </SwiperSlide>
@@ -73,7 +76,7 @@ const Find = (props) => {
             <Card
               image='https://images.unsplash.com/photo-1628474754745-7c89f629cba8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bWVrbmVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
               make='Meknes'
-              desc='4 events'
+              desc={data[1]+" available"}
             />
             </Link>
           </SwiperSlide>
@@ -82,7 +85,7 @@ const Find = (props) => {
             <Card
               image='https://images.unsplash.com/photo-1553898439-93ac04cfe972?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
               make='Fes'
-              desc='20 events'
+              desc={data[2]+" available"}
             />
             </Link>
           </SwiperSlide>
@@ -91,7 +94,7 @@ const Find = (props) => {
             <Card
               image='https://images.unsplash.com/photo-1530524860884-57eb29dac21b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHJhYmF0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
               make='Rabat'
-              desc='15 events'
+              desc={data[3]+" available"}
             />
             </Link>
           </SwiperSlide>
@@ -100,7 +103,7 @@ const Find = (props) => {
             <Card
               image='https://images.unsplash.com/photo-1561642769-1bca263542e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bWFycmFrZWNofGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
               make='Marrakech'
-              desc='10 events'
+              desc={data[4]+" available"}
             />
             </Link>
           </SwiperSlide>
@@ -109,16 +112,16 @@ const Find = (props) => {
             <Card
               image='https://images.unsplash.com/photo-1572206912757-5a78ff4d79be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8ZXNzYW91aXJhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
               make='Essaouira'
-              desc='25 events'
+              desc={data[5]+" available"}
             />
             </Link>
           </SwiperSlide>
           <SwiperSlide>
-            <Link to='/events/event' style={{color:'#000'}}>           
+            <Link to='/events/eventtangier' style={{color:'#000'}}>           
             <Card
               image='https://images.unsplash.com/photo-1533501747004-381b96042e88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fHRhbmdpZXIlMjBtb3JvY2NvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
               make='Tangier'
-              desc='not available'
+              desc={data[6]+" available"}
             />
             </Link>
           </SwiperSlide>
@@ -126,21 +129,20 @@ const Find = (props) => {
             <Card
               image='https://images.unsplash.com/photo-1562874732-260714dfe537?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGFnYWRpcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
               make='Agadir'
-              desc='not available'
+              desc={data[7]+" available"}
             />
           </SwiperSlide>
           <SwiperSlide>
             <Card
               image='https://images.unsplash.com/photo-1614690797360-bf8dccae8aab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDd8fGFsJTIwaG9jZWltYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
               make='Houceima'
-              desc='4 events'
+              desc={data[8]+" available"}
             />
           </SwiperSlide> 
 
-        
+          </>
+      )}
          
-          
-          
         </Swiper>
       </div>
     </div>

@@ -5,6 +5,19 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Link } from 'react-router-dom';
 
 import './navStyle.css';
+import Box from '@mui/material/Box';
+import Avatar from '@mui/material/Avatar';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Tooltip from '@mui/material/Tooltip';
+import PersonAdd from '@mui/icons-material/PersonAdd';
+import Settings from '@mui/icons-material/Settings';
+import Logout from '@mui/icons-material/Logout';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 import { AuthContext } from '../../context/AuthContext';
 import logo from '../../assets/moroccol_logo.png'
@@ -114,6 +127,24 @@ function Navbar() {
         </div>
     ) */
 
+    const { user } = useContext(AuthContext);
+
+    var arr = user.username
+    
+    //show only the first letter
+    const letter1 = arr.charAt(0);
+    const letter2 = arr.charAt(1)
+
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
+
     const [scrolling, setScrolling] = useState(false);
   useEffect(() => {
 
@@ -221,7 +252,7 @@ function Navbar() {
               </div>
               <ul class="menu-main">
                 <li>
-                  <a href="#">Home</a>
+                  <a href="/">Home</a>
                 </li>
                 <li class="menu-item-has-children">
                   <a href="#">
@@ -255,12 +286,12 @@ function Navbar() {
                   </div>
                 </li>
                 <li class="menu-item-has-children">
-                  <a href="#">
+                  <a>
                     Things To Do <KeyboardArrowDownIcon fontSize='small'/>
                   </a>
                   <div class="sub-menu mega-menu mega-menu-column-4">
                     <div class="list-item">
-                      <h4 class="title">Men's Fashion</h4>
+                       <a href='/things/hotels/'><h4 class="title">Hotels</h4></a> 
                       <ul>
                         <li>
                           <a href="#">Product List</a>
@@ -292,8 +323,11 @@ function Navbar() {
                       </ul>
                     </div>
                     <div class="list-item">
-                      <h4 class="title">Women's Fashion</h4>
+                      <a href='/things/cafres/'><h4 class="title">Cafes & Restaurants</h4></a>  
                       <ul>
+                        <li>
+                          <a href="#">Product List</a>
+                        </li>
                         <li>
                           <a href="#">Product List</a>
                         </li>
@@ -318,13 +352,10 @@ function Navbar() {
                         <li>
                           <a href="#">Product List</a>
                         </li>
-                        <li>
-                          <a href="#">Product List</a>
-                        </li>
                       </ul>
                     </div>
                     <div class="list-item">
-                      <h4 class="title">Home, Kitchen</h4>
+                      <a href='/events/'><h4 class="title">Events</h4></a>
                       <ul>
                         <li>
                           <a href="#">Product List</a>
@@ -356,7 +387,7 @@ function Navbar() {
                       </ul>
                     </div>
                     <div class="list-item">
-                      <img src="img/shop1.jpg" alt="shop" />
+                      <img src="https://images.unsplash.com/photo-1549140600-78c9b8275e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW9yb2Njb3xlbnwwfDF8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="shop" />
                     </div>
                   </div>
                 </li>
@@ -383,7 +414,7 @@ function Navbar() {
                   </div>
                 </li>
                 <li>
-                  <a href="#">About us</a>
+                  <a href="/about">About us</a>
                 </li>
                 <li>
                   <a href="#">Contact</a>
@@ -393,9 +424,89 @@ function Navbar() {
           </div>
 
           <div class="header-item item-right">
-            <a href="/login">
+            {user ? 
+            <div className='avatar'>
+               <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+               <Tooltip title="Account settings">
+                 <IconButton
+                   onClick={handleClick}
+                   size="small"
+                   sx={{ ml: 2 }}
+                   aria-controls={open ? 'account-menu' : undefined}
+                   aria-haspopup="true"
+                   aria-expanded={open ? 'true' : undefined}
+                 >
+                   <Avatar sx={{ width: 40, height: 40, textTransform:"capitalize" }}>{letter1}{letter2}</Avatar>
+                 </IconButton>
+               </Tooltip>
+             </Box>
+             <Menu
+               anchorEl={anchorEl}
+               id="account-menu"
+               open={open}
+               onClose={handleClose}
+               onClick={handleClose}
+               PaperProps={{
+                 elevation: 0,
+                 sx: {
+                   overflow: 'visible',
+                   filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                   mt: 1.5,
+                   '& .MuiAvatar-root': {
+                     width: 32,
+                     height: 32,
+                     ml: -0.5,
+                     mr: 1,
+                   },
+                   '&:before': {
+                     content: '""',
+                     display: 'block',
+                     position: 'absolute',
+                     top: 0,
+                     right: 14,
+                     width: 10,
+                     height: 10,
+                     bgcolor: 'background.paper',
+                     transform: 'translateY(-50%) rotate(45deg)',
+                     zIndex: 0,
+                   },
+                 },
+               }}
+               transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+               anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+             >
+               <MenuItem onClick={handleClose}>
+                 <Avatar /> {user.username}
+               </MenuItem>
+               <MenuItem onClick={handleClose}>
+                 <Avatar /> {user.email}
+               </MenuItem>
+               <Divider />
+               <MenuItem onClick={handleClose}>
+                 <ListItemIcon>
+                   <FavoriteIcon style={{color:'#FD1D1D'}} fontSize="medium" />
+                 </ListItemIcon>
+                 Liked Content
+               </MenuItem>
+               <MenuItem onClick={handleClose}>
+                 <ListItemIcon>
+                   <Settings fontSize="small" />
+                 </ListItemIcon>
+                 Settings
+               </MenuItem>
+               <MenuItem onClick={handleClose}>
+                 <ListItemIcon>
+                   <Logout fontSize="small" />
+                 </ListItemIcon>
+                 Logout
+               </MenuItem>
+             </Menu>
+             </div>
+            
+            : ( <a href="/login">
               <button className='btn_nav'>Login</button>
             </a>
+            )}
 
             <div class="mobile-menu-trigger">
               <span></span>

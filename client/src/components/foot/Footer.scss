@@ -66,3 +66,24 @@
       flex-direction: column;
   }
 }
+
+.lower__footer {
+  margin: 0 5rem;
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.02rem solid var(--primary-color);
+  padding-top: 1rem;
+  margin-top: 1rem;
+  ul {
+    display: flex;
+    list-style-type: none;
+    gap: 3rem;
+    li {
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+}

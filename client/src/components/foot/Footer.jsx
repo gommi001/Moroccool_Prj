@@ -75,10 +75,10 @@ const Footer = () => {
         <p><LocationOnRoundedIcon/> {country} , {city}</p>
       ) : (
         <p>Loading city...</p>
-      )}  
-          
+      )}      
         </div>
       </div>
+      
     </div>
   );
 };

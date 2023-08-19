@@ -21,7 +21,7 @@ const HotelTypes = () => {
     'https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dmlsbGFzfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
     'https://images.unsplash.com/photo-1535312800630-1c173409799a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bW90ZWwlMjBpbmRvb3J8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
     'https://images.unsplash.com/photo-1664261421791-c25c5760f577?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwYXJ0ZW1lbnQlMjBpbmRvb3J8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
-    'https://images.unsplash.com/photo-1607582544644-f1da2a004994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dGlueSUyMGhvdXNlc3xlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60'
+    'https://imagxes.unsplash.com/photo-1607582544644-f1da2a004994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dGlueSUyMGhvdXNlc3xlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60'
 
   ]
 
