@@ -129,11 +129,11 @@ function Navbar() {
 
     const { user } = useContext(AuthContext);
 
-    var arr = user.username
+
     
     //show only the first letter
-    const letter1 = arr.charAt(0);
-    const letter2 = arr.charAt(1)
+    // const letter1 = arr.charAt(0);
+    // const letter2 = arr.charAt(1)
 
 
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -436,7 +436,7 @@ function Navbar() {
                    aria-haspopup="true"
                    aria-expanded={open ? 'true' : undefined}
                  >
-                   <Avatar sx={{ width: 40, height: 40, textTransform:"capitalize" }}>{letter1}{letter2}</Avatar>
+                   <Avatar sx={{ width: 40, height: 40, textTransform:"capitalize" }}> {user.username} </Avatar>
                  </IconButton>
                </Tooltip>
              </Box>
