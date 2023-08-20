@@ -128,13 +128,23 @@ function Navbar() {
     ) */
 
     const { user } = useContext(AuthContext);
-
-
     
     //show only the first letter
     // const letter1 = arr.charAt(0);
     // const letter2 = arr.charAt(1)
 
+    
+
+    const handleLogout = () => {
+      // Clear user data (e.g., authentication tokens)
+      // ...
+  
+      // Clear local storage
+      localStorage.clear();
+  
+      // Redirect to the login page or home page
+      window.location.href = '/'; // Replace with the appropriate URL
+    };
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -494,7 +504,7 @@ function Navbar() {
                  </ListItemIcon>
                  Settings
                </MenuItem>
-               <MenuItem onClick={handleClose}>
+               <MenuItem onClick={handleLogout}>
                  <ListItemIcon>
                    <Logout fontSize="small" />
                  </ListItemIcon>
