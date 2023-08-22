@@ -5,36 +5,16 @@ import HotelIcon from '@mui/icons-material/Hotel';
 import RoomServiceIcon from '@mui/icons-material/RoomService';
 import HotTubIcon from '@mui/icons-material/HotTub';
 import PoolIcon from '@mui/icons-material/Pool';
+import useFetch from "../hooks/useFetch";
 
 
 export default function Recommend(props) {
-  const data = [
-   
-    {
-      image: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/330293797.jpg?k=791243ee925c0b05a63d0daa32435d2465cae99d4decb6ecf948003966acbf1b&o=&hp=1',
-      title: "Hotel Volubilis",
-      location: "Meknes - Hamria - Morocco",
-     
-    },
 
-    {
-      image: 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/324753277.jpg?k=727318ec2af37837c375d254c910d2d171697655dad050d3f3690d4cf5cce546&o=&hp=1https://cf.bstatic.com/xdata/images/hotel/max1024x768/324753277.jpg?k=727318ec2af37837c375d254c910d2d171697655dad050d3f3690d4cf5cce546&o=&hp=1',
-      title: "Riad Royal",
-      location: "Meknes - Morocco",
-    },
-
-    {
-      image: 'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=600',
-      title: "Hotel Valorant",
-      location: "Rabat - Morocco",
+  const { data, loading, error, reFetch } = useFetch(`/hotels/getFeaturedHotel?featured=true`)
   
-    },
- 
-
-
-  ];
 
   const [active, setActive] = useState(1);
+
   return (
     <Section id="recommend">
       <div className="title">
@@ -42,12 +22,12 @@ export default function Recommend(props) {
       </div>
      
       <div className="destinations">
-        {data.map((destination) => {
+        {data.map((item) => {
           return (
             <div className="destination">
-              <img src={destination.image} alt="" />
-              <h3>{destination.title}</h3>
-              <p> <LocationOnIcon className="loc_icon" fontSize="small"/> {destination.location}</p>
+              <img src={item.photos[0]} alt="" />
+              <h3>{item.name}</h3>
+              <p> <LocationOnIcon className="loc_icon" fontSize="small"/> {item.location}</p>
               <div className="info">
                 <div className="services">
                   <HotelIcon/>
@@ -55,10 +35,9 @@ export default function Recommend(props) {
                   <HotTubIcon/>
                   <PoolIcon/>
                 </div>
-                <h4>{destination.cost}</h4>
               </div>
               <div className="distance">
-                <span>{destination.date}</span>
+                <a href={`/destination/${item.city}`} ><h4>{item.city}</h4></a>
               </div>
             </div>
           );

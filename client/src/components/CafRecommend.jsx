@@ -6,35 +6,12 @@ import RestaurantIcon from '@mui/icons-material/Restaurant';
 import WifiIcon from '@mui/icons-material/Wifi';
 import Rating from '@mui/material/Rating';
 import { Link } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
 
 
 export default function Recommend(props) {
-  const data = [
-    {
-      image: 'https://images.unsplash.com/photo-1527777239963-58f0a83566f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bW9yb2NjbyUyMHJlc3RhdXJhbnR8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
-      title: "CAfe Ilyes",
-      location: "Rabat - Morocco",
-  
-    },
-   
-    
-   
-    {
-      image: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aG90ZWxzfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
-      title: "Restaurant Amine",
-      location: "Fes - Morocco",
-   
-    },
 
-    
-
-    {
-      image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWxzfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
-      title: "Cafe",
-      location: "Rabat - Agdal - Morocco",
-     
-    },
-  ];
+  const { data, loading, error, reFetch } = useFetch(`/cafes/getFeaturedCafe?featured=true&city=${props.city}`)
 
   const [active, setActive] = useState(1);
   return (
@@ -44,20 +21,19 @@ export default function Recommend(props) {
       </div>
      
     <div className="destinations">
-      {data.map((destination) => {
+      {data.map((item) => {
         return (
           <Link to='cafepage'>
             <div className="destination">
-              <img className="img_cafe" src={destination.image} alt="" />
-              <h3>{destination.title}</h3>
-              <p> <LocationOnIcon className="loc_icon" fontSize="small"/> {destination.location}</p>
+              <img className="img_cafe" src={item.photos[1]} alt="" />
+              <h3>{item.name}</h3>
+              <p> <LocationOnIcon className="loc_icon" fontSize="small"/> {item.location}</p>
               <div className="info">
                 <div className="services">
                   <RestaurantIcon/>
                   <FreeBreakfastIcon/>
                   <WifiIcon/>
                 </div>
-                <h4 className="tit">{destination.cost}</h4>
               </div>
 
             </div>

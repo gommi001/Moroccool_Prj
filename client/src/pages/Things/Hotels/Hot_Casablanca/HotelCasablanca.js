@@ -1,40 +1,37 @@
-import React from 'react';
-import Navbar from '../../../../components/navbar/Navbaryy';
-import HeroDes from '../../../../components/heroDes/HeroDes';
-import useFetch from '../../../../hooks/useFetch';
-import SearchItem from '../../../../components/searchitem/SearchItem';
-import FilterCafe from '../../../../components/FilterCafe';
-import FooterBanner from '../../../../components/footbanner/FooterBanner';
-import Foot from '../../../../components/foot/Footer';
-import './casablancahotel.scss';
+import React from 'react'
+import Navbar from '../../../../components/navbar/Navbar'
+import HeroDes from '../../../../components/heroDes/HeroDes'
+import useFetch from '../../../../hooks/useFetch'
+import SearchItem from '../../../../components/searchitem/SearchItem'
+import FilterCafe from '../../../../components/FilterCafe'
+import FooterBanner from '../../../../components/footbanner/FooterBanner'
+import Foot from '../../../../components/foot/Footer'
+import './casablancahotel.scss'
+import { useLocation } from 'react-router-dom'
+
+
 
 const Casablanca = () => {
-  const { data, loading, error, reFetch } = useFetch('/hotels?city=casablanca');
+
 
   return (
-    <div className="casablanca">
-      <Navbar />
+    <div className='casablanca'>
+      <Navbar/>
       <HeroDes
         image="https://images.pexels.com/photos/2404046/pexels-photo-2404046.jpeg?auto=compress&cs=tinysrgb&w=600"
         city="Hotels in Casablanca"
         arcity=""
       />
-      {/*  {loading ? (
-              "loading"
-            ) : (
-              <>
-                {data.map((item) => (
-                  <SearchItem item={item} key={item._id} />
-                ))}
-              </>
-          )}
-        */}
-      <FilterCafe />
+              
+      <SearchItem 
+        city='casablanca'
+      />
+       
+      <FooterBanner/>
+      <Foot/>
 
-      <FooterBanner />
-      <Foot />
     </div>
-  );
-};
+  )
+}
 
-export default Casablanca;
+export default Casablanca
