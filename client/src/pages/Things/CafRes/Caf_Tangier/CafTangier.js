@@ -4,10 +4,11 @@ import Navbar from '../../../../components/navbar/Navbar'
 import FilterCafe from '../../../../components/FilterCafe'
 import FooterBanner from '../../../../components/footbanner/FooterBanner'
 import Foot from '../../../../components/foot/Footer'
+import CafeCards from '../../../../components/cafeCards/CafeCards'
 
 
 
-const Meknes = () => {
+const CafTangier = () => {
   return (
     <div className='meknes'>
       <Navbar/>
@@ -15,6 +16,11 @@ const Meknes = () => {
         image="https://images.unsplash.com/photo-1533501747004-381b96042e88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
         city="Cafe & Restaurant in Tangier"
         arcity="طنجة"
+      />
+
+      <CafeCards
+        city='tanger'
+        destination='Tangier'
       />
 
       <FilterCafe/>
@@ -27,4 +33,4 @@ const Meknes = () => {
   )
 }
 
-export default Meknes
+export default CafTangier

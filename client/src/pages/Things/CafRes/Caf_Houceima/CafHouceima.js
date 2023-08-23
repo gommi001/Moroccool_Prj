@@ -8,28 +8,29 @@ import CafeCards from '../../../../components/cafeCards/CafeCards'
 
 
 
-const CafMeknes = () => {
+const CafHouceima = () => {
   return (
     <div className='meknes'>
       <Navbar/>
       <HeroDes
-        image="https://media.istockphoto.com/photos/ancient-gate-and-walls-of-bab-elmansour-in-meknes-morocco-north-picture-id1201510816?k=20&m=1201510816&s=612x612&w=0&h=ZYClIU2th6vaVcpNX8gbDe3vu2Cu0BNZfi-NtekM77U="
-        city="Cafe & Restaurant in Meknes"
-        arcity=''
+        image="https://images.unsplash.com/photo-1533501747004-381b96042e88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+        city="Cafe & Restaurant in Tangier"
+        arcity="طنجة"
       />
 
       <CafeCards
-        city='meknes'
-        destination='Meknes'
+        city=''
+        destination='Al Houceima'
       />
 
       <FilterCafe/>
-      
+
       <FooterBanner/>
       <Foot/>
 
+      
     </div>
   )
 }
 
-export default CafMeknes
+export default CafHouceima

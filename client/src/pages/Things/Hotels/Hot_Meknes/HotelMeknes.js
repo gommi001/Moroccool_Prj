@@ -7,9 +7,8 @@ import SearchItem from '../../../../components/searchitem/SearchItem'
 import useFetch from '../../../../hooks/useFetch'
 
 
-const Meknes = () => {
+const HotelMeknes = () => {
 
-  const { data, loading, error, reFetch } = useFetch(`/hotels?city=meknes`)
 
   return (
     <div className='meknes'>
@@ -30,4 +29,4 @@ const Meknes = () => {
   )
 }
 
-export default Meknes
+export default HotelMeknes

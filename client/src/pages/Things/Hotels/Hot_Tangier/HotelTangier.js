@@ -9,7 +9,7 @@ import SearchItem from '../../../../components/searchitem/SearchItem'
 
 
 
-const Meknes = () => {
+const HotelTangier = () => {
   return (
     <div className='meknes'>
       <Navbar/>
@@ -19,8 +19,8 @@ const Meknes = () => {
         arcity="طنجة"
       />
 
-      <SearchItem 
-        city='rabat'
+      <hotelCards 
+        city='tanger'
       /> 
 
       <FooterBanner/>
@@ -31,4 +31,4 @@ const Meknes = () => {
   )
 }
 
-export default Meknes
+export default HotelTangier

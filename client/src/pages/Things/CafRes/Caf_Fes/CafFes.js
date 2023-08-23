@@ -4,11 +4,11 @@ import HeroDes from '../../../../components/heroDes/HeroDes'
 import FilterCafe from '../../../../components/FilterCafe'
 import FooterBanner from '../../../../components/footbanner/FooterBanner'
 import Foot from '../../../../components/foot/Footer'
+import CafeCards from '../../../../components/cafeCards/CafeCards'
 
 
 
-
-const Fes = () => {
+const CafFes = () => {
   return (
     <div className='fes'>
       <Navbar/>
@@ -18,14 +18,18 @@ const Fes = () => {
         arcity=''
       />
 
+      <CafeCards
+        city='fes'
+        destination='Fes'
+      />
+
       <FilterCafe/>  
 
       <FooterBanner/>
-        <Foot/>    
-          
+      <Foot/>             
       
     </div>
   )
 }
 
-export default Fes
+export default CafFes

@@ -11,7 +11,7 @@ import useFetch from "../../hooks/useFetch";
 
 export default function Recommend(props) {
 
-  const { data, loading, error, reFetch } = useFetch(`/hotels?city=${props.city}`)
+  const { data, loading, error, reFetch } = useFetch(`/cafes?city=${props.city}`)
  
   const [active, setActive]=useState(1) 
 
@@ -19,7 +19,7 @@ export default function Recommend(props) {
 
       <Section id="recommend">
             <div className="title">
-              <h2>Hotels in Casablanca City</h2>
+              <h2>Cafes in {props.destination} City</h2>
             </div>
 
             <div className="destinations">
@@ -27,21 +27,20 @@ export default function Recommend(props) {
               return (  
                   <div className="destination">
                         <Link className="link" to={`/things/hotels/hotelpage/${item._id}`}>
-                          <div className="cont">
-                            <img src={item.photos[0]} alt="" />                          
-                            <h5 className="type">{item.type}</h5>  
-                          </div>                        
+                          <img src={item.photos[0]} alt="" />
                         </Link>
                     <h3>{item.name}</h3>
                     <p> <LocationOnIcon className="loc_icon" fontSize="small"/> {item.location}</p>
-                    <div className="distance">
-                      <a href={`/destination/${item.city}`}> <h5 style={{color:'blue'}}>{item.city}</h5></a>
+                    <div className="info">
                       <div className="services">
                           <HotelIcon/>
                           <PoolIcon/>
                           <HotTubIcon/>
                       </div>
                     </div>
+                    <div className="distance">
+                            <a href={`/destination/${item.city}`}> <h5 style={{color:'blue'}}>{item.city}</h5></a>
+                          </div>
                   </div>
                   
                 );
@@ -76,7 +75,6 @@ const Section = styled.section`
     gap: 1rem;
     padding: 0 3rem;
     .destination {
-      text-transform: capitalize;
       padding: 1rem;
       display: flex;
       flex-direction: column;
@@ -88,18 +86,6 @@ const Section = styled.section`
         transform: translateX(0.4rem) translateY(-1rem);
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       }
-      .cont{
-        position: relative;
-        text-align: center;
-
-        .type{
-            color:white;
-            position: absolute;
-            top: 8px;
-            right: 16px;
-            border-radius:10%
-        }
-      }
       img {
         width: 100%;
         border-radius: 1rem;
@@ -108,7 +94,7 @@ const Section = styled.section`
         display: flex;
         align-items: center;
         .services {
-          color:green;
+          color:red;
           display: flex;
           gap: 0.3rem;
           img {
@@ -125,21 +111,7 @@ const Section = styled.section`
       .distance {
         display: flex;
         justify-content: space-between;
-
-        .services {
-          color:red;
-          display: flex;
-          gap: .7rem;
-          img {
-            border-radius: 1rem;
-            background-color: #4d2ddb84;
-            width: 2rem;
-            /* padding: 1rem; */
-            padding: 0.3rem 0.4rem;
-          }
-        }
       }
-      
     }
   }
   @media screen and (min-width: 280px) and (max-width: 768px) {

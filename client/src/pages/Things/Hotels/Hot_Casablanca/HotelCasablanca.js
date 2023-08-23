@@ -11,7 +11,7 @@ import { useLocation } from 'react-router-dom'
 
 
 
-const Casablanca = () => {
+const HotelCasablanca = () => {
 
 
   return (
@@ -34,4 +34,4 @@ const Casablanca = () => {
   )
 }
 
-export default Casablanca
+export default HotelCasablanca

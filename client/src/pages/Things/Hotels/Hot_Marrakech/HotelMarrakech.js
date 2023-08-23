@@ -8,7 +8,7 @@ import Footer from '../../../../components/foot/Footer'
 import SearchItem from '../../../../components/searchitem/SearchItem'
 
 
-const Meknes = () => {
+const HotelMarrakech = () => {
   return (
     <div className='meknes'>
       <Navbar/>
@@ -29,4 +29,4 @@ const Meknes = () => {
   )
 }
 
-export default Meknes
+export default HotelMarrakech

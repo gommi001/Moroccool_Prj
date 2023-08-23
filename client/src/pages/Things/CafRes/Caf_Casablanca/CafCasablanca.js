@@ -8,7 +8,7 @@ import Recommend from '../../../../components/Recommend'
 import FilterCafe from '../../../../components/FilterCafe'
 import FooterBanner from '../../../../components/footbanner/FooterBanner'
 import Foot from '../../../../components/foot/Footer'
-
+import CafeCards from '../../../../components/cafeCards/CafeCards'
 
 
 
@@ -24,15 +24,10 @@ const CafCasablanca = ({item}) => {
         city="Cafe & Restaurant in Casablanca"
       />
 
-      {loading ? (
-              "loading"
-            ) : (
-              <>
-                {data.map((item) => (
-                  <SearchItem item={item} key={item._id} />
-                ))}
-              </>
-          )}
+      <CafeCards
+        city='casablanca'
+        destination='Casablanca'
+      />
            
       <FilterCafe/>
 

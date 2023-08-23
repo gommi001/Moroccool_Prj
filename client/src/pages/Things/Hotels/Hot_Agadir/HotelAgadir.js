@@ -4,32 +4,29 @@ import Navbar from '../../../../components/navbar/Navbar'
 import FilterCafe from '../../../../components/FilterCafe'
 import FooterBanner from '../../../../components/footbanner/FooterBanner'
 import Foot from '../../../../components/foot/Footer'
-import CafeCards from '../../../../components/cafeCards/CafeCards'
+import SearchItem from '../../../../components/searchitem/SearchItem'
+import Footer from '../../../../components/foot/Footer'
 
 
-
-const CafRabat = () => {
+const HotelAgadir = () => {
   return (
     <div className='meknes'>
       <Navbar/>
       <HeroDes
         image="https://images.pexels.com/photos/10223422/pexels-photo-10223422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        city="Cafe & Restaurant in Rabat"
-        arcity="الرباط"
+        city="Hotels and Riads in Agadir"
+        
       />
 
-      <CafeCards
-        city='rabat'
-        destination='Rabat'
-      />
-
-      <FilterCafe/>
-
-      <FooterBanner/>
-      <Foot/>
+      <SearchItem 
+        city='agadir'
+      /> 
       
+      <FooterBanner/>
+      <Footer/>
+
     </div>
   )
 }
 
-export default CafRabat
+export default HotelAgadir

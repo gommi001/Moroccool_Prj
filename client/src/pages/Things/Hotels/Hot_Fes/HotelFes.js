@@ -9,9 +9,8 @@ import FooterBanner from '../../../../components/footbanner/FooterBanner'
 import Foot from '../../../../components/foot/Footer'
 
 
-const Fes = () => {
+const HotelFes = () => {
 
-  const { data, loading, error, reFetch } = useFetch("/hotels?city=fes")
 
   return (
     <div className='fes'>
@@ -35,4 +34,4 @@ const Fes = () => {
   )
 }
 
-export default Fes
+export default HotelFes
