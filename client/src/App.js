@@ -56,6 +56,10 @@ import EventMarrakech from './pages/events/eventMarrakech/EventMarrakech';
 import EventMeknes from './pages/events/eventMeknes/EventMeknes';
 import EventRabat from './pages/events/eventRabat/EventRabat';
 import EventTangier from './pages/events/eventTangier/EventTangier';
+import CafAgadir from './pages/Things/CafRes/Caf_Agadir/CafAgadir';
+import CafHouceima from './pages/Things/CafRes/Caf_Houceima/CafHouceima';
+import HotelAgadir from './pages/Things/Hotels/Hot_Agadir/HotelAgadir';
+import HotelHouceima from './pages/Things/Hotels/Hot_Houceima/HotelHouceima';
 
 
 
@@ -115,6 +119,8 @@ function App() {
               <Route path='hotelmeknes' element={ <HotelMeknes/> }/>
               <Route path='hotelrabat' element={ <HotelRabat/> }/>
               <Route path='hoteltangier' element={ <HotelTangier/> }/>
+              <Route path='hotelagadir' element={ <HotelAgadir/> }/>
+              <Route path='hotelhouceima' element={ <HotelHouceima/> }/>
               <Route path='hotelpage' element = { <HotelPage/> } />
               <Route path='hotelsearch' element = { <SearchHotels/> } />
             </Route>
@@ -129,6 +135,8 @@ function App() {
               <Route path='cafemeknes' element = { <CafMeknes/> } />
               <Route path='caferabat' element = { <CafRabat/> } />
               <Route path='cafetangier' element = { <CafTangier/> } />
+              <Route path='cafeagadir' element = { <CafAgadir/> } />
+              <Route path='cafehouceima' element = { <CafHouceima/> } />
               <Route path='cafepage' element = { <CafePage/> } />             
             </Route>
 
