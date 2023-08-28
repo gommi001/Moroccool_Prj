@@ -29,6 +29,7 @@ import AttachEmailIcon from '@mui/icons-material/AttachEmail';
 import LanguageIcon from '@mui/icons-material/Language';
 import './cafepage.scss'
 
+import { useParams } from 'react-router-dom';
 
 
 
@@ -50,22 +51,26 @@ function CafePage({item}) {
 
   const [active, setActive]=useState(1)
 
-  const location = useLocation();
-  const id = location.pathname.split("/")[2];
+  const location= useLocation()
+  const { id } = useParams();
+  const { data, loading, error } = useFetch(`/cafes/find/${id}`);
+
   
-  //const { data, loading, error } = useFetch(`/cafes/find/${id}`);
+
   const [toggler, setToggler] = useState(false);
   
 
   return (
     <div>
         <Navbar/>
+        
         <div className='heroDes' id='#'>
             <img className='hero_img' src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=600"/>
             <div className='content'>
-                <h2>Cafe Al Nassim</h2>
+                <h2>Welcome To {data.name}</h2>
             </div>
         </div>
+        
         
         <CafeMenu/>
         <ScrollToTop/>
@@ -78,10 +83,7 @@ function CafePage({item}) {
       <div className="content">
         <h3>Why should you Choose Our Restaurant</h3>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
+          {data.description}
         </p>
         
       </div>
@@ -90,8 +92,8 @@ function CafePage({item}) {
 
         {/* Pictures , Location and Map Section */}
         <div className='featured'>
-            <h1 className='featured-text'>Nassim Cafe</h1>
-            <h3 className='featured-text'>Pictures and Services Available</h3>
+            <h2 className='featured-text'>Nassim Cafe</h2>
+            <h6 className='featured-text'>Pictures and Services Available</h6>
             <div className='container'>
             {/* {data.photos?.map((photo, i) => ( */} 
                 <>
@@ -108,15 +110,15 @@ function CafePage({item}) {
                 <FsLightbox
 				    toggler={toggler}
 				    sources={[
-					'https://images.unsplash.com/photo-1627307016660-c7217d815b50?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FmZSUyMHJlc3RhdXJhbnQlMjBtYXJvY3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
-					'https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FmZSUyMHJlc3RhdXJhbnQlMjBtYXJvY3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
-					'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-                    'https://images.unsplash.com/photo-1628394029748-3bbbc88a4334?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2FmZSUyMHJlc3RhdXJhbnQlMjBtYXJvY3xlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60'
+					    'https://images.unsplash.com/photo-1627307016660-c7217d815b50?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FmZSUyMHJlc3RhdXJhbnQlMjBtYXJvY3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+					    'https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FmZSUyMHJlc3RhdXJhbnQlMjBtYXJvY3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+					    'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+              'https://images.unsplash.com/photo-1628394029748-3bbbc88a4334?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2FmZSUyMHJlc3RhdXJhbnQlMjBtYXJvY3xlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60'
 				    ]}
 			    />
                 <div className='span-3 img-details'>
                     <div className='top'>
-                        <h2><FmdGoodIcon fontSize='large'/>Hamria - Meknes</h2>
+                        <h2><FmdGoodIcon fontSize='large'/>{data.location}</h2>
                         <hr/>
                         <div className="secsocial">
                                 <FaFacebook fontSize="xx-large" className='face' />

@@ -5,12 +5,14 @@ import HotelIcon from '@mui/icons-material/Hotel';
 import RoomServiceIcon from '@mui/icons-material/RoomService';
 import HotTubIcon from '@mui/icons-material/HotTub';
 import PoolIcon from '@mui/icons-material/Pool';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 
 
 export default function Recommend(props) {
 
+  const location = useLocation();
+  const path = location.pathname.split("/")[1];
   const { data, loading, error, reFetch } = useFetch(`/cafes?city=${props.city}`)
  
   const [active, setActive]=useState(1) 
@@ -25,12 +27,12 @@ export default function Recommend(props) {
             <div className="destinations">
             {data.map((item) => {
               return (  
-                  <div className="destination">
-                        <Link className="link" to={`/things/hotels/hotelpage/${item._id}`}>
+                  <div key={item._id} className="destination">
+                        <Link className="link" to={`/things/cafes/${item._id}/`}>
                           <img src={item.photos[0]} alt="" />
                         </Link>
                     <h3>{item.name}</h3>
-                    <p> <LocationOnIcon className="loc_icon" fontSize="small"/> {item.location}</p>
+                    <p> <LocationOnIcon className="loc_icon" fontSize="small"/> {item.location} </p>
                     <div className="info">
                       <div className="services">
                           <HotelIcon/>

@@ -121,12 +121,14 @@ function App() {
               <Route path='hoteltangier' element={ <HotelTangier/> }/>
               <Route path='hotelagadir' element={ <HotelAgadir/> }/>
               <Route path='hotelhouceima' element={ <HotelHouceima/> }/>
-              <Route path='hotelpage' element = { <HotelPage/> } />
               <Route path='hotelsearch' element = { <SearchHotels/> } />
+              <Route 
+                path='hotelpage/:id' 
+                element = { <HotelPage/> } />
             </Route>
 
 
-            <Route path='cafres'>
+            <Route path='cafes'>
               <Route index element = { <CafRes/> } />
               <Route path='cafecasablanca' element = { <CafCasablanca/> } />
               <Route path='cafeessaouira' element = { <CafEssaouira/> } />
@@ -137,8 +139,12 @@ function App() {
               <Route path='cafetangier' element = { <CafTangier/> } />
               <Route path='cafeagadir' element = { <CafAgadir/> } />
               <Route path='cafehouceima' element = { <CafHouceima/> } />
-              <Route path='cafepage' element = { <CafePage/> } />             
+              <Route 
+                path=":id/" 
+                element = { <CafePage/> } 
+              />             
             </Route>
+
 
             <Route path='programs' element={ <Programs/> } />
             <Route path='trip' element={ <Trip/> } />

@@ -24,10 +24,17 @@ const CafCasablanca = ({item}) => {
         city="Cafe & Restaurant in Casablanca"
       />
 
-      <CafeCards
-        city='casablanca'
-        destination='Casablanca'
-      />
+      {loading ? (
+              "loading"
+            ) : (
+          
+          <CafeCards
+            city='casablanca'
+            destination='Casablanca'
+            
+          />
+         
+      )}
            
       <FilterCafe/>
 

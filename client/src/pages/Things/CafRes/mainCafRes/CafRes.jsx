@@ -21,7 +21,7 @@ const CafRes = () => {
       />
 
       <Find
-        title="Cafe & Restaurant Destinations in Morocco"
+        title="Cafes & Restaurants in Morocco"
         subtitle="Discover Cafes and Restaurants in many cities"
       /> 
       <Counter/>        
