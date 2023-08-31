@@ -10,7 +10,7 @@ import useFetch from "../hooks/useFetch";
 
 export default function Recommend(props) {
 
-  const { data, loading, error, reFetch } = useFetch(`/hotels/getFeaturedHotel?featured=true`)
+  const { data, loading, error, reFetch } = useFetch(`/hotels/getFeaturedHotel?featured=true`)//&city=${props.city}
   
 
   const [active, setActive] = useState(1);

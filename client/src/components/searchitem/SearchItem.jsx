@@ -19,14 +19,14 @@ export default function Recommend(props) {
 
       <Section id="recommend">
             <div className="title">
-              <h2>Hotels in Casablanca City</h2>
+              <h2>Hotels in {props.destination} City</h2>
             </div>
 
             <div className="destinations">
             {data.map((item) => {
               return (  
-                  <div className="destination">
-                        <Link className="link" to={`/things/hotels/hotelpage/${item._id}`}>
+                  <div key={item._id} className="destination">
+                        <Link className="link" to={`/things/hotels/${item._id}`}>
                           <div className="cont">
                             <img src={item.photos[0]} alt="" />                          
                             <h5 className="type">{item.type}</h5>  
@@ -127,6 +127,7 @@ const Section = styled.section`
         justify-content: space-between;
 
         .services {
+          
           color:red;
           display: flex;
           gap: .7rem;

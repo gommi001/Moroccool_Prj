@@ -8,8 +8,11 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Recommend from './Recommend';
+import CardsFilter from './CardsFilter'
 
 function TabPanel(props) {
+
+
   const { children, value, index, ...other } = props;
 
   return (
@@ -36,13 +39,15 @@ TabPanel.propTypes = {
 };
 
 function a11yProps(index) {
+
+
   return {
     id: `full-width-tab-${index}`,
     'aria-controls': `full-width-tabpanel-${index}`,
   };
 }
 
-export default function FullWidthTabs() {
+export default function FullWidthTabs(props) {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
@@ -73,12 +78,12 @@ export default function FullWidthTabs() {
         allowScrollButtonsMobile
         aria-label="full width tabs example"
         >
-          <Tab sx={{":hover": {backgroundColor: "transparent",}}} label="All" {...a11yProps(0)} />
-          <Tab sx={{":hover": {backgroundColor: "transparent"}}} label="Recommended" {...a11yProps(1)} />
-          <Tab sx={{":hover": {backgroundColor: "transparent"}}} label="Restaurants" {...a11yProps(2)} />
-          <Tab sx={{":hover": {backgroundColor: "transparent"}}} label="Espace Enfants" {...a11yProps(3)} />
-          <Tab sx={{":hover": {backgroundColor: "transparent"}}} label="Espace Etudiants" {...a11yProps(4)} />
-          <Tab sx={{":hover": {backgroundColor: "transparent"}}} label="Espace Couple" {...a11yProps(5)} />
+          <Tab sx={{":hover": {backgroundColor: "transparent",}}} label="Espace Famille" {...a11yProps(0)} />
+          <Tab sx={{":hover": {backgroundColor: "transparent"}}} label="Espace Fumeur" {...a11yProps(1)} />
+          <Tab sx={{":hover": {backgroundColor: "transparent"}}} label="Espace Enfants" {...a11yProps(2)} />
+          <Tab sx={{":hover": {backgroundColor: "transparent"}}} label="Espace Etudiants" {...a11yProps(3)} />
+          <Tab sx={{":hover": {backgroundColor: "transparent"}}} label="Match du Foot" {...a11yProps(4)} />
+          <Tab sx={{":hover": {backgroundColor: "transparent"}}} label="Parking" {...a11yProps(5)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -86,24 +91,55 @@ export default function FullWidthTabs() {
         index={value}
         onChangeIndex={handleChangeIndex}
       >
-        <TabPanel value={value} index={0} dir={theme.direction}>
-          <Recommend/>
+        <TabPanel id='family' value={value} index={0} dir={theme.direction}>
+
+          <CardsFilter
+            service='Family Space'
+            city={props.destination}
+          />
+
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          Item Two
+
+          <CardsFilter
+            service='Smoking Area'
+            city={props.destination}
+          />
+
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-          <Recommend/>
+
+          <CardsFilter
+            service='Kids Area'
+            city={props.destination}
+          />
+
         </TabPanel>
         <TabPanel value={value} index={3} dir={theme.direction}>
-          Item Three
+
+          <CardsFilter
+            service='Espace Etudiants'
+            city={props.destination}
+          />
+
         </TabPanel>
         <TabPanel value={value} index={4} dir={theme.direction}>
-          Item Three
+
+          <CardsFilter
+            service='Bein Sport'
+            city={props.destination}
+          />
+
         </TabPanel>
         <TabPanel value={value} index={5} dir={theme.direction}>
-          Item Three
+
+          <CardsFilter
+            service='Parking'
+            city={props.destination}
+          />
+
         </TabPanel>
+        
       </SwipeableViews>
     </Box>
     </>

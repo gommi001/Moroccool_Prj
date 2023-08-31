@@ -7,6 +7,7 @@ import HotTubIcon from '@mui/icons-material/HotTub';
 import PoolIcon from '@mui/icons-material/Pool';
 import { Link, useLocation } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
+import { CircularProgress } from '@mui/material';
 
 
 export default function Recommend(props) {
@@ -24,12 +25,17 @@ export default function Recommend(props) {
               <h2>Cafes in {props.destination} City</h2>
             </div>
 
+            {loading ?
+          (<CircularProgress color="inherit" />)  : ( 
             <div className="destinations">
             {data.map((item) => {
               return (  
                   <div key={item._id} className="destination">
                         <Link className="link" to={`/things/cafes/${item._id}/`}>
-                          <img src={item.photos[0]} alt="" />
+                        <div className="cont">
+                          <img src={item.photos[0]} alt="" />                          
+                          <h5 className="type">{item.type}</h5>  
+                        </div>
                         </Link>
                     <h3>{item.name}</h3>
                     <p> <LocationOnIcon className="loc_icon" fontSize="small"/> {item.location} </p>
@@ -41,13 +47,14 @@ export default function Recommend(props) {
                       </div>
                     </div>
                     <div className="distance">
-                            <a href={`/destination/${item.city}`}> <h5 style={{color:'blue'}}>{item.city}</h5></a>
-                          </div>
+                      <a href={`/destination/${item.city}`} ><h4>{item.city}</h4></a>
+                    </div>
                   </div>
                   
                 );
               })}
             </div>
+            )}
       </Section>
     
   );
@@ -77,6 +84,7 @@ const Section = styled.section`
     gap: 1rem;
     padding: 0 3rem;
     .destination {
+      text-transform: capitalize;
       padding: 1rem;
       display: flex;
       flex-direction: column;
@@ -85,9 +93,23 @@ const Section = styled.section`
       border-radius: 1rem;
       transition: 0.3s ease-in-out;
       &:hover {
-        transform: translateX(0.4rem) translateY(-1rem);
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        transform: translateX(0.1rem) translateY(-1rem);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
       }
+
+      .cont{
+        position: relative;
+        text-align: center;
+
+        .type{
+            color:white;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            border-radius:10%
+        }
+      }
+
       img {
         width: 100%;
         border-radius: 1rem;

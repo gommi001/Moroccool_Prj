@@ -11,7 +11,9 @@ import useFetch from "../hooks/useFetch";
 
 export default function Recommend(props) {
 
-  const { data, loading, error, reFetch } = useFetch(`/cafes/getFeaturedCafe?featured=true&city=${props.city}`)
+
+  
+  const { data, loading, error, reFetch } = useFetch(`/cafes/getFeaturedCafe?featured=true`)//&city=${props.city}
 
   const [active, setActive] = useState(1);
   return (
@@ -22,10 +24,14 @@ export default function Recommend(props) {
      
     <div className="destinations">
       {data.map((item) => {
-        return (
-          <Link to='cafepage'>
+        return (         
             <div className="destination">
-              <img className="img_cafe" src={item.photos[1]} alt="" />
+              <Link className="link" to={`/things/cafes/${item._id}`}>
+                <div className="cont">
+                  <img src={item.photos[0]} alt="" />                          
+                  <h5 className="type">{item.type}</h5>  
+                </div>
+              </Link>
               <h3>{item.name}</h3>
               <p> <LocationOnIcon className="loc_icon" fontSize="small"/> {item.location}</p>
               <div className="info">
@@ -35,9 +41,10 @@ export default function Recommend(props) {
                   <WifiIcon/>
                 </div>
               </div>
-
+              <div className="distance">
+                <a href={`/destination/${item.city}`} ><h4>{item.city}</h4></a>
+              </div>
             </div>
-            </Link>
           );
         })}
       </div>
@@ -70,6 +77,7 @@ const Section = styled.section`
     gap: 1rem;
     padding: 0 3rem;
     .destination {
+      text-transform: capitalize;
       padding: 1rem;
       display: flex;
       flex-direction: column;
@@ -81,6 +89,19 @@ const Section = styled.section`
         transform: translateX(0.4rem) translateY(-1rem);
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       }
+      .cont{
+        position: relative;
+        text-align: center;
+
+        .type{
+            color:white;
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            border-radius:10%
+        }
+      }
+
       img {
         width: 100%;
         border-radius: 1rem;

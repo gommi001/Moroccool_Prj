@@ -3,7 +3,6 @@ import Navbar from '../../../../components/navbar/Navbar'
 import HeroDes from '../../../../components/heroDes/HeroDes'
 import DescriptionCafe from '../../../../components/DescriptionCafe'
 import Featured from '../../../../components/featured/Featured'
-import Data from '../../../../components/services/Data'
 import Test2 from '../../../../components/menu/Test2'
 import CafeMenu from '../../../../components/cafemenu/CafeMenu'
 import FooterBanner from '../../../../components/footbanner/FooterBanner'
@@ -17,11 +16,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import RouterIcon from '@mui/icons-material/Router';
 import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
 
-import House1 from '../../../../assets/house1.jpg'
-import Bed1 from '../../../../assets/bed1.jpg'
-import Bed2 from '../../../../assets/bed2.jpg'
-import Kitchen from '../../../../assets/kitchen.jpg'
-import Bathroom from '../../../../assets/bath1.jpg'
 
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import { FaFacebook, FaInstagram, FaTiktok, FaTwitter, FaWhatsapp } from 'react-icons/fa'
@@ -32,22 +26,8 @@ import './cafepage.scss'
 import { useParams } from 'react-router-dom';
 
 
-
-
 function CafePage({item}) {
 
-  const services = [
-    { name: <RouterIcon fontSize='large'/>, status: <DoneIcon className='done'/> },
-    { name: "Smoking Area", status:  <CloseIcon className='icon_close'/>},
-    { name: "BBQ", status: <DoneIcon className='done'/>},
-    { name: "Student Area", status: <CloseIcon className='icon_close'/>},
-    { name: <DeliveryDiningIcon fontSize='large'/>, status: <DoneIcon className='done'/>},
-    { name: "Policia", status: <DoneIcon className='done'/>},
-    { name: "Local", status: <CloseIcon className='icon_close'/>},
-    { name: "Host", status: <DoneIcon className='done'/>},
-    { name: "C", status: <DoneIcon className='done'/>},
-    { name: "M", status: <DoneIcon className='done'/>},
-  ]
 
   const [active, setActive]=useState(1)
 
@@ -55,9 +35,9 @@ function CafePage({item}) {
   const { id } = useParams();
   const { data, loading, error } = useFetch(`/cafes/find/${id}`);
 
-  
 
-  const [toggler, setToggler] = useState(false);
+  const [gallery, setGallery] = useState(false);
+  const [menu, setMenu] = useState(false);
   
 
   return (
@@ -65,9 +45,9 @@ function CafePage({item}) {
         <Navbar/>
         
         <div className='heroDes' id='#'>
-            <img className='hero_img' src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=600"/>
+            <img className='hero_img' src={data.photos}/>
             <div className='content'>
-                <h2>Welcome To {data.name}</h2>
+                <h2 style={{textTransform:'capitalize'}}>Welcome To {data.type} {data.name}</h2>
             </div>
         </div>
         
@@ -76,60 +56,61 @@ function CafePage({item}) {
         <ScrollToTop/>
 
         {/* Cafe Description , LOGO and Text And Title  */}
-        <section className="desc_section">
+      <section className="desc_section">
       <div className="imagedesc">
-        <img src='https://images.unsplash.com/photo-1543826173-70651703c5a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudCUyMG1vcm9jY298ZW58MHwyfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60' alt="choose" />
+        <img src={data.logo} alt="choose" />
       </div>
       <div className="content">
         <h3>Why should you Choose Our Restaurant</h3>
         <p>
           {data.description}
-        </p>
-        
+        </p>   
       </div>
-        </section>
+      </section>
         {/* Ends Here */}
 
         {/* Pictures , Location and Map Section */}
         <div className='featured'>
-            <h2 className='featured-text'>Nassim Cafe</h2>
+            <h1 className='featured-text'>{data.name}</h1>
             <h6 className='featured-text'>Pictures and Services Available</h6>
             <div className='container'>
-            {/* {data.photos?.map((photo, i) => ( */} 
+            {data.photos?.length > 0 && (
+              <>
+                <img className='span-3 image-grid-row-2' src={data.photos[3]} alt='' />
+              </>
+            )}
+            {data.photos?.slice(0, 3).map((photo, i)=> ( 
                 <>
-                <img className='span-3 image-grid-row-2' src={House1} alt='' />
-                <img src={Bed1} alt='' />
-                <img src={Bed2} alt='' />
-                <img src={Kitchen} alt='' />
-                <div className="ff" onClick={() => setToggler(!toggler)}>
-                    <img className="ffff" src={Bathroom} alt=''  />
-                    <div class="centered">Show More...</div>
-                </div>
+                  <img key={i} src={photo} alt='' />
                 </>
+            ))}
+                <div className="ff" onClick={() => setGallery(!gallery)}>
+                {data.photos?.length > 0 && (
+                <>
+                  <img className="ffff" src={data.photos[3]} alt=''  />
+                  <div class="centered">Show More...</div>
+                </>
+            )}
+                </div>
                                                      
                 <FsLightbox
-				    toggler={toggler}
-				    sources={[
-					    'https://images.unsplash.com/photo-1627307016660-c7217d815b50?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FmZSUyMHJlc3RhdXJhbnQlMjBtYXJvY3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
-					    'https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FmZSUyMHJlc3RhdXJhbnQlMjBtYXJvY3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
-					    'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-              'https://images.unsplash.com/photo-1628394029748-3bbbc88a4334?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2FmZSUyMHJlc3RhdXJhbnQlMjBtYXJvY3xlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60'
-				    ]}
+				    toggler={gallery}
+				    sources={data.photos}
 			    />
                 <div className='span-3 img-details'>
                     <div className='top'>
                         <h2><FmdGoodIcon fontSize='large'/>{data.location}</h2>
                         <hr/>
                         <div className="secsocial">
-                                <FaFacebook fontSize="xx-large" className='face' />
-                                <FaInstagram fontSize="xx-large" className='insta' />
-                                <FaTwitter fontSize="xx-large" className='twitter' />
-                                <FaTiktok fontSize="xx-large" className='tiktok'/>                    
+                                <a href={``}><FaFacebook fontSize="xx-large" className='face' /></a>
+                                <FaInstagram fontSize="xx-large" className='insta' />{data.instagram}
+                                <a href={`https://www.tiktok.com/@${data.twitter}`}><FaTwitter fontSize="xx-large" className='twitter' /></a>
+                                <a href={`https://www.tiktok.com/@${data.tiktok}`}><FaTiktok fontSize="xx-large" className='tiktok'/></a>                
                         </div>
                         <hr/>
-                        <h6><AttachEmailIcon fontSize="large"/> Contact by email</h6>
+                        <h6><AttachEmailIcon fontSize="large"/> {data.phone} </h6>
                         <hr/>        
-                        <h6><LanguageIcon fontSize="large" /> Restaurant Website...</h6>                      
+                        <h6><LanguageIcon fontSize="large" /> {data.website} </h6>                      
                     </div>
                 </div>
                 <div className='span-2 right-img-details'>
@@ -161,11 +142,11 @@ function CafePage({item}) {
                   <th>Service</th>
                   <th>Status</th>
                 </tr>
-                {services.map((val, key) => {
+                {data.services?.map((item,index) => {
                   return (
-                    <tr key={key}>
-                      <td className='sername'>{val.name}</td>
-                      <td>{val.status}</td>
+                    <tr key={index}>
+                      <td className='sername'>{item}</td>
+                      <td><DoneIcon className='done'/></td>
                     </tr>
                   )
                 })}
@@ -174,26 +155,22 @@ function CafePage({item}) {
         </>
         {/* Services Section Ends Here */}
 
-        {/* Menu Section  
-        <div className='menu_section'>          
-            <h2 className='head'>Restaurant Menu</h2>       
-            <img style={{ cursor:'pointer',maxWidth:300 }} src='https://images.unsplash.com/photo-1515697320591-f3eb3566bc3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWVudSUyMGNhZmV8ZW58MHwxfDB8fHww&auto=format&fit=crop&w=500&q=60'  onClick={() => setToggler(!toggler)}/>          
+        {/* {/* Menu Section   */}
+        <div>          
+            <h2 className='heading'>Restaurant Menu</h2>
+           
+              <img style={{ cursor:'pointer',maxWidth:300 }} src='https://images.unsplash.com/photo-1515697320591-f3eb3566bc3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWVudSUyMGNhZmV8ZW58MHwxfDB8fHww&auto=format&fit=crop&w=500&q=60'  onClick={() => setMenu(!menu)}/>
+                                     
+          
        
           <FsLightbox
-				    toggler={toggler}
-				    sources={[
-					'https://images.unsplash.com/photo-1627307016660-c7217d815b50?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FmZSUyMHJlc3RhdXJhbnQlMjBtYXJvY3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
-					'https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FmZSUyMHJlc3RhdXJhbnQlMjBtYXJvY3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
-					'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-          'https://images.unsplash.com/photo-1628394029748-3bbbc88a4334?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2FmZSUyMHJlc3RhdXJhbnQlMjBtYXJvY3xlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60'
-				    ]}
-			    />
-      
-        </div>
+				    toggler={menu}
+				    sources={data.menu}
+			    />  
+    </div>
         {/* Menu Section Ends Here*/} 
 
 
-        <Test2/>
 
         <FooterBanner/>
         <Foot/>   
