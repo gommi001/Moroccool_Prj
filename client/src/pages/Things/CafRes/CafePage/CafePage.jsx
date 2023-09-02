@@ -12,7 +12,17 @@ import DoneIcon from '@mui/icons-material/Done';
 import CloseIcon from '@mui/icons-material/Close';
 import RouterIcon from '@mui/icons-material/Router';
 import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
-
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+import CollectionsIcon from '@mui/icons-material/Collections';
+import InfoIcon from '@mui/icons-material/Info';
+import DescriptionIcon from '@mui/icons-material/Description';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import RestoreIcon from '@mui/icons-material/Restore';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import Box from '@mui/material/Box';
 
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import { FaFacebook, FaInstagram, FaTiktok, FaTwitter, FaWhatsapp } from 'react-icons/fa'
@@ -36,6 +46,7 @@ function CafePage({item}) {
   const [gallery, setGallery] = useState(false);
   const [menu, setMenu] = useState(false);
   
+  const [value, setValue] = React.useState(0);
 
   return (
     <div>
@@ -49,11 +60,34 @@ function CafePage({item}) {
         </div>
         
         
-        <CafeMenu/>
+        {/* Page Menu  Section Starts */}
+    <Box className='btm' sx={{ width: 500 }}>
+      <BottomNavigation
+        className='navbtm'
+        showLabels
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+      >
+        
+        <BottomNavigationAction href='#description' label='Des' icon={<DescriptionIcon />} />
+        <BottomNavigationAction href='#gallery' label='Gall' icon={<CollectionsIcon />} />
+        <BottomNavigationAction href='#moreinfo' label='Info' icon={<InfoIcon />} />
+        <BottomNavigationAction href='#services' label='Ser' icon={<AccountBoxIcon />} />
+        <BottomNavigationAction href='#menu' label="Menu" icon={<RestaurantIcon />} />
+        </BottomNavigation>
+      </Box>
+      {/* Page Menu  Section Ends */}
+
+
+
+      {/* Scroll To Top Function */}
         <ScrollToTop/>
+      {/* Scroll To Top Function */}
 
         {/* Cafe Description , LOGO and Text And Title  */}
-      <section className="desc_section">
+      <section id='description' className="desc_section">
       <div className="imagedesc">
         <img src={data.logo} alt="choose" />
       </div>
@@ -67,7 +101,7 @@ function CafePage({item}) {
         {/* Ends Here */}
 
         {/* Pictures , Location and Map Section */}
-        <div className='featured'>
+        <div id='gallery' className='featured'>
             <h1 className='featured-text'>{data.name}</h1>
             <h6 className='featured-text'>Pictures and Services Available</h6>
             <div className='container'>
@@ -94,7 +128,7 @@ function CafePage({item}) {
 				    toggler={gallery}
 				    sources={data.photos}
 			    />
-                <div className='span-3 img-details'>
+                <div id='moreinfo' className='span-3 img-details'>
                     <div className='top'>
                         <h2><FmdGoodIcon fontSize='large'/>{data.location}</h2>
                         <hr/>
@@ -133,7 +167,7 @@ function CafePage({item}) {
         {/* Services Section */}
         <>
         <h2 className='heading'>More Informations</h2>
-          <div className="table">      
+          <div id='services' className="table">      
               <table>
                 <tr>
                   <th>Service</th>
@@ -156,7 +190,7 @@ function CafePage({item}) {
         <div>          
             <h2 className='heading'>Restaurant Menu</h2>
            
-              <img style={{ cursor:'pointer',maxWidth:300 }} src='https://images.unsplash.com/photo-1515697320591-f3eb3566bc3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWVudSUyMGNhZmV8ZW58MHwxfDB8fHww&auto=format&fit=crop&w=500&q=60'  onClick={() => setMenu(!menu)}/>
+              <img id='menu' style={{ cursor:'pointer',maxWidth:300 }} src='https://images.unsplash.com/photo-1515697320591-f3eb3566bc3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWVudSUyMGNhZmV8ZW58MHwxfDB8fHww&auto=format&fit=crop&w=500&q=60'  onClick={() => setMenu(!menu)}/>
                                      
           
        

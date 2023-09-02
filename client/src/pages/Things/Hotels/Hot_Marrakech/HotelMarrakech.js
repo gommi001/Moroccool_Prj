@@ -3,9 +3,9 @@ import HeroDes from '../../../../components/heroDes/HeroDes'
 import Navbar from '../../../../components/navbar/Navbar'
 import FilterCafe from '../../../../components/FilterCafe'
 import FooterBanner from '../../../../components/footbanner/FooterBanner'
-import Foot from '../../../../components/foot/Footer'
 import Footer from '../../../../components/foot/Footer'
 import SearchItem from '../../../../components/searchitem/SearchItem'
+import FilterHotel from '../../../../components/FilterHotel'
 
 
 const HotelMarrakech = () => {
@@ -18,10 +18,14 @@ const HotelMarrakech = () => {
         arcity="مراكش"
       />
 
-      <SearchItem
+      {/* <SearchItem
         city='marrakech'
         destination='Marrakech'
-      /> 
+      />  */}
+
+      <FilterHotel
+        destination='marrakech'
+      />
 
       <FooterBanner/>
       <Footer/>

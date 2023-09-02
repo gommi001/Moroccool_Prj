@@ -3,9 +3,10 @@ import HeroDes from '../../../../components/heroDes/HeroDes'
 import Navbar from '../../../../components/navbar/Navbar'
 import FilterCafe from '../../../../components/FilterCafe'
 import FooterBanner from '../../../../components/footbanner/FooterBanner'
-import Foot from '../../../../components/foot/Footer'
 import SearchItem from '../../../../components/searchitem/SearchItem'
 import Footer from '../../../../components/foot/Footer'
+import FilterHotel from '../../../../components/FilterHotel'
+
 
 
 const HotelRabat = () => {
@@ -17,11 +18,16 @@ const HotelRabat = () => {
         city="Hotels and Riads in Rabat"
       />
 
-      <SearchItem 
+      {/* <SearchItem 
         city='rabat'
         destination='Rabat'
+      />  */}
+
+      <FilterHotel
+        destination='rabat'
       /> 
-      
+
+
       <FooterBanner/>
       <Footer/>
 

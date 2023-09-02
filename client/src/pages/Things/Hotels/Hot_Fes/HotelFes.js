@@ -1,12 +1,12 @@
 import React from 'react'
 import Navbar from '../../../../components/navbar/Navbar'
 import HeroDes from '../../../../components/heroDes/HeroDes'
-import Selects from '../../../../components/selects/Selects'
 import useFetch from '../../../../hooks/useFetch'
 import SearchItem from '../../../../components/searchitem/SearchItem'
 import FilterCafe from '../../../../components/FilterCafe'
 import FooterBanner from '../../../../components/footbanner/FooterBanner'
 import Foot from '../../../../components/foot/Footer'
+import FilterHotel from '../../../../components/FilterHotel'
 
 
 const HotelFes = () => {
@@ -21,12 +21,14 @@ const HotelFes = () => {
         arcity=""
       />
       
-      <SearchItem 
+      {/* <SearchItem 
         city='fes'
         destination='Fes'
-      />      
+      />       */}
 
-      <FilterCafe/>
+      <FilterHotel
+        destination='fes'
+      />
       
       <FooterBanner/>
       <Foot/>

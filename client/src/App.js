@@ -123,7 +123,7 @@ function App() {
               <Route path='hotelhouceima' element={ <HotelHouceima/> }/>
               <Route path='hotelsearch' element = { <SearchHotels/> } />
               <Route 
-                path='hotelpage/:id' 
+                path=':id/' 
                 element = { <HotelPage/> } />
             </Route>
 

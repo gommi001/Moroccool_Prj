@@ -6,6 +6,7 @@ import FooterBanner from '../../../../components/footbanner/FooterBanner'
 import Foot from '../../../../components/foot/Footer'
 import SearchItem from '../../../../components/searchitem/SearchItem'
 import Footer from '../../../../components/foot/Footer'
+import FilterHotel from '../../../../components/FilterHotel'
 
 
 const HotelAgadir = () => {
@@ -18,10 +19,14 @@ const HotelAgadir = () => {
         
       />
 
-      <SearchItem 
+      {/* <SearchItem 
         city='agadir'
         destination='Agadir'
-      /> 
+      />  */}
+
+      <FilterHotel
+        destination='agadir'
+      />
       
       <FooterBanner/>
       <Footer/>

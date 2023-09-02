@@ -6,6 +6,7 @@ import FooterBanner from '../../../../components/footbanner/FooterBanner'
 import Foot from '../../../../components/foot/Footer'
 import SearchItem from '../../../../components/searchitem/SearchItem'
 import useFetch from '../../../../hooks/useFetch'
+import FilterHotel from '../../../../components/FilterHotel'
 
 
 const Meknes = () => {
@@ -23,12 +24,14 @@ const Meknes = () => {
         arcity="الصويرة"
       />
 
-      <SearchItem 
+      {/* <SearchItem 
         city='essaouira'
         destination='Essaouira'
-      />
+      /> */}
       
-      <FilterCafe/>
+      <FilterHotel
+        destination='essaouira'
+      />
       
       <FooterBanner/>
       <Foot/>

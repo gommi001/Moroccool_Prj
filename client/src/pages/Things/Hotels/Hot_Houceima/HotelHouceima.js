@@ -1,11 +1,10 @@
 import React from 'react'
 import HeroDes from '../../../../components/heroDes/HeroDes'
 import Navbar from '../../../../components/navbar/Navbar'
-import FilterCafe from '../../../../components/FilterCafe'
 import FooterBanner from '../../../../components/footbanner/FooterBanner'
-import Foot from '../../../../components/foot/Footer'
 import SearchItem from '../../../../components/searchitem/SearchItem'
 import Footer from '../../../../components/foot/Footer'
+import FilterHotel from '../../../../components/FilterHotel'
 
 
 const HotelHouceima = () => {
@@ -18,10 +17,14 @@ const HotelHouceima = () => {
         
       />
 
-      <SearchItem 
+      {/* <SearchItem 
         city='houceima'
         destination='Houceima'
-      /> 
+      />  */}
+
+      <FilterHotel
+        destination='houceima'
+      />
       
       <FooterBanner/>
       <Footer/>

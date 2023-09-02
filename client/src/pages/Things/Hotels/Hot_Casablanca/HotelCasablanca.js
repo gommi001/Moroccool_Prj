@@ -3,7 +3,7 @@ import Navbar from '../../../../components/navbar/Navbar'
 import HeroDes from '../../../../components/heroDes/HeroDes'
 import useFetch from '../../../../hooks/useFetch'
 import SearchItem from '../../../../components/searchitem/SearchItem'
-import FilterCafe from '../../../../components/FilterCafe'
+import FilterHotel from '../../../../components/FilterHotel'
 import FooterBanner from '../../../../components/footbanner/FooterBanner'
 import Foot from '../../../../components/foot/Footer'
 import './casablancahotel.scss'
@@ -23,9 +23,13 @@ const HotelCasablanca = () => {
         arcity=""
       />
               
-      <SearchItem 
+      {/* <SearchItem 
         city='casablanca'
         destination='Casablanca'
+      /> */}
+
+      <FilterHotel
+        destination='casablanca'
       />
        
       <FooterBanner/>

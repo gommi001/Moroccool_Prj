@@ -5,6 +5,7 @@ import FooterBanner from '../../../../components/footbanner/FooterBanner'
 import Foot from '../../../../components/foot/Footer'
 import SearchItem from '../../../../components/searchitem/SearchItem'
 import useFetch from '../../../../hooks/useFetch'
+import FilterHotel from '../../../../components/FilterHotel'
 
 
 const HotelMeknes = () => {
@@ -19,10 +20,14 @@ const HotelMeknes = () => {
         arcity="مكناس"
       />
 
-      <SearchItem 
+      {/* <SearchItem 
         city='meknes'
         destination='Meknes'
-      /> 
+      />  */}
+
+      <FilterHotel
+        destination='meknes'
+      />
       
       <FooterBanner/>
       <Foot/>

@@ -6,6 +6,7 @@ import FooterBanner from '../../../../components/footbanner/FooterBanner'
 import Foot from '../../../../components/foot/Footer'
 import Footer from '../../../../components/foot/Footer'
 import SearchItem from '../../../../components/searchitem/SearchItem'
+import FilterHotel from '../../../../components/FilterHotel'
 
 
 
@@ -19,10 +20,16 @@ const HotelTangier = () => {
         arcity="طنجة"
       />
 
-      <SearchItem
+      {/* <SearchItem
         city='tanger'
         destination='Tangier'
-      /> 
+      />  */}
+
+      <FilterHotel
+        destination='tanger'
+      />
+
+
 
       <FooterBanner/>
       <Footer/>
