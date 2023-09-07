@@ -1,10 +1,21 @@
 .luxury {
   max-width: 1040px;
   margin: auto;
-  padding: 5rem 2rem;
+  padding: 1rem 2rem;
+  position: relative;
 }
 .heading{
   position: relative;
+  margin-bottom: 2rem;
+}
+
+.viewMoreButton{
+  position: absolute;
+  right: 20px;
+  color: #f12c2c;
+}
+.viewMoreButton :hover{
+  color: #b83939;
 }
 
 .heading ::after{
@@ -21,8 +32,8 @@
 .luxury .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  padding: 4rem 0;
+  gap: .7rem;
+  padding: 3rem 0;
 }
 
 .heading h1 {
@@ -33,19 +44,6 @@
 
 .heading p {
   text-align: center;
-}
-
-button{
-  background-color: #4b9b6f;
-  border: .3px solid ;
-  color: #fff;
-  padding: .7rem 1.5rem;
-  border-radius: 50px;
-  cursor: pointer;
-  font-family: Georgia, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-button:hover{
-  background-color: #3f7565;
 }
 
 .text_bg {
