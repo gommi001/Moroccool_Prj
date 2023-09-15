@@ -22,7 +22,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { AuthContext } from '../../context/AuthContext';
 import logo from '../../assets/moroccol_logo.png'
 
-function Navbar() {
+function Navbar({ activeTab, setActiveTab }) {
   /*  const [nav, setNav] = useState(false)
     const handleNav = () => setNav(!nav)
 
@@ -60,7 +60,7 @@ function Navbar() {
                             <span class="dropbtn">Things To Do <KeyboardArrowDownIcon fontSize='small'/></span>
                             <div class="dropdown-content">
                                 <Link to='/things/hotels'>Hotels <FiberNewOutlinedIcon className='nav_icon' /> </Link>
-                                <Link to='/things/cafres'>Cafe & Restaurant</Link>
+                                <Link to='/things/cafes'>Cafe & Restaurant</Link>
                                 <Link to='/things/programs'>Programs</Link>
                                 <Link to='/things/trip'>Hire a Trip</Link>
                             </div>
@@ -112,7 +112,7 @@ function Navbar() {
                 <Link to='/'><li>Home</li></Link>
                 <Link to='/destination'><li>Destinations</li></Link>
                 <Link to='/events'><li>Events</li></Link>
-                <Link to='/things/cafres'><li>Things To Do</li></Link>
+                <Link to='/things/cafes'><li>Things To Do</li></Link>
                 <Link to=''><li>Book</li></Link>
                 </ul>
                 <div className="social-icons">
@@ -128,12 +128,19 @@ function Navbar() {
     ) */
 
     const { user } = useContext(AuthContext);
-    
-    //show only the first letter
-    // const letter1 = arr.charAt(0);
-    // const letter2 = arr.charAt(1)
 
-    
+    let letter1 = '';
+let letter2 = '';
+
+// Check if user is defined before accessing properties
+if (user && user.username) {
+  const arr = user.username;
+  // Show only the first two letters
+  letter1 = arr.charAt(0);
+  letter2 = arr.charAt(1);
+} else {
+  
+}
 
     const handleLogout = () => {
       // Clear user data (e.g., authentication tokens)
@@ -145,6 +152,12 @@ function Navbar() {
       // Redirect to the login page or home page
       window.location.href = '/'; // Replace with the appropriate URL
     };
+
+    // Mui5 Tabs Links
+    const handleNavItemClick = (dataId) => {
+      setActiveTab(dataId); // Set the activeTab based on the data-id attribute
+    };
+
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -333,7 +346,7 @@ function Navbar() {
                       </ul>
                     </div>
                     <div class="list-item">
-                      <a href='/things/cafres/'><h4 class="title">Cafes & Restaurants</h4></a>  
+                      <a href='/things/cafes/'><h4 class="title">Cafes & Restaurants</h4></a>  
                       <ul>
                         <li>
                           <a href="#">Product List</a>
@@ -446,7 +459,7 @@ function Navbar() {
                    aria-haspopup="true"
                    aria-expanded={open ? 'true' : undefined}
                  >
-                   <Avatar sx={{ width: 40, height: 40, textTransform:"capitalize" }}> {user.username} </Avatar>
+                   <Avatar sx={{ width: 40, height: 40, textTransform:"capitalize" }}> {letter1}{letter2} </Avatar>
                  </IconButton>
                </Tooltip>
              </Box>
