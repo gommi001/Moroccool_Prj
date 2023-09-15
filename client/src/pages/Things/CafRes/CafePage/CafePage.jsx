@@ -92,7 +92,7 @@ function CafePage({item}) {
         <img src={data.logo} alt="choose" />
       </div>
       <div className="content">
-        <h3>Why should you Choose Our Restaurant</h3>
+        <h3>Why should you Choose {data.name} </h3>
         <p>
           {data.description}
         </p>   

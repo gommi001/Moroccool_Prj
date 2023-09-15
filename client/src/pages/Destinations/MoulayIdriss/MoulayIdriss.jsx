@@ -111,7 +111,7 @@ const MoulayIdriss = () => {
       />
 
       <GridCat
-        link1='/things/cafres/cafeMoulayIdriss'
+        link1='/things/cafes/cafeMoulayIdriss'
         link2='/events/eventMoulayIdriss'
         link3='/things/hotels/hotelMoulayIdriss'
       />
