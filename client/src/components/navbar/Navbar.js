@@ -275,11 +275,11 @@ if (user && user.username) {
               </div>
               <ul class="menu-main">
                 <li>
-                  <a href="/">Home</a>
+                  <a href="/">Accueil</a>
                 </li>
                 <li class="menu-item-has-children">
                   <a href="#">
-                    New <KeyboardArrowDownIcon fontSize='small'/>
+                  Nouveau<KeyboardArrowDownIcon fontSize='small'/>
                   </a>
                   <div class="sub-menu mega-menu mega-menu-column-4">
                     <div class="list-item text-center">
@@ -310,7 +310,7 @@ if (user && user.username) {
                 </li>
                 <li class="menu-item-has-children">
                   <a>
-                    Things To Do <KeyboardArrowDownIcon fontSize='small'/>
+                  Activités<KeyboardArrowDownIcon fontSize='small'/>
                   </a>
                   <div class="sub-menu mega-menu mega-menu-column-4">
                     <div class="list-item">
@@ -437,7 +437,7 @@ if (user && user.username) {
                   </div>
                 </li>
                 <li>
-                  <a href="/about">About us</a>
+                  <a href="/about">À propos de nous</a>
                 </li>
                 <li>
                   <a href="#">Contact</a>
@@ -527,7 +527,7 @@ if (user && user.username) {
              </div>
             
             : ( <a href="/login">
-              <button className='btn_nav'>Login</button>
+              <button className='btn_nav'>Connexion</button>
             </a>
             )}
 

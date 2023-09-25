@@ -97,7 +97,7 @@ const Meknes = () => {
         link3='/things/hotels/hotelmeknes'
       />
 
-      <CafRecommend/>
+     {/*  <CafRecommend/> */}
       
       <Tabs/>
 
