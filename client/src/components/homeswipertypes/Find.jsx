@@ -17,10 +17,10 @@ const Find = () => {
   return (
     <div className={styles.find}>
       <div className={styles.heading}>
-        <h1>Things To Do</h1>
+        <h1>Activités</h1>
         <div className={styles.text_bg}>
           <p>
-            Explore Many Activities While You are in Morocco
+          Découvrez une multitude d'expériences lors de votre visite au Maroc
           </p>
         </div>
       </div>

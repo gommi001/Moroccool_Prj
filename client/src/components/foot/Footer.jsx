@@ -60,7 +60,7 @@ const Footer = () => {
           <span>Compare</span>
           <span>Cookies</span>
         </div>
-      </div>
+      </div> 
       <div className="bottom">
         <div className="left">
           <img src={logo} alt="" className="logo" />
