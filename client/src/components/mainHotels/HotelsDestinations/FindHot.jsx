@@ -19,10 +19,10 @@ const Find = () => {
   return (
     <div className={styles.find}>
       <div className={styles.heading}>
-        <h1>Hotels Destinations in Morocco</h1>
+        <h1>Hôtels Destinations au Maroc</h1>
         <div className={styles.text_bg}>
           <p>
-            Discover Hotels in many cities
+          Discover Hotels in many cities
           </p>
         </div>
       </div>
