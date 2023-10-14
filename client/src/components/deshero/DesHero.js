@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './deshero.scss';
 import invideo from '../../assets/invideo.mp4';
 import { AiOutlineSearch } from 'react-icons/ai';
@@ -6,6 +6,7 @@ var data = require('./data.json');
 
 const DesHero = () => {
   const [value, setValue] = useState('');
+
 
   const onChange = (event) => {
     setValue(event.target.value);
