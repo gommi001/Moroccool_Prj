@@ -35,7 +35,7 @@ const Assilah = () => {
 
   useEffect(() => {
     fetch(
-      'https://api.openweathermap.org/data/2.5/weather?q=Assilah&appid=b2747cf8f61c26a33e39ddb183dc29bb&units=metric&includeAstronomy=true'
+      'https://api.openweathermap.org/data/2.5/weather?q=Asilah&appid=b2747cf8f61c26a33e39ddb183dc29bb&units=metric&includeAstronomy=true'
     )
       .then((response) => response.json())
       .then((data) => {
@@ -106,8 +106,8 @@ const Assilah = () => {
       </div>
       <Navbar/>
       <HeroDes
-        image=""
-        city="Assilah"  
+        image="https://cdn.pixabay.com/photo/2013/05/03/00/21/morocco-108638_1280.jpg"
+        city="Asilah"  
       />
 
       <GridCat
@@ -124,7 +124,7 @@ const Assilah = () => {
 
 
       <Programs
-      city="Assilah"
+        city="Assilah"
         img1='https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9yb2Njb3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
         title1='Mohammedia'
         text1='Cras mattis consectetur purus sit amet fermentum.

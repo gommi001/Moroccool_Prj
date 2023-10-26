@@ -1,0 +1,82 @@
+/* Container for the search bar */
+.search-container {
+    position: absolute;
+    display: inline-block;
+    width: 600px; /* Occupy full width of its container */
+}
+
+/* Style for the input field wrapper */
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 5px;
+    width: 100%; /* Occupy full width of its container */
+    max-width: 600px; /* Limit the maximum width */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Style for the input field */
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%; /* Occupy full width of its container */
+}
+
+/* Style for the search button */
+.search-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/* Style for suggestions */
+.suggestions {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Occupy full width of its container */
+    max-width: 600px; /* Limit the maximum width */
+    overflow-y: auto;
+    border-radius: 30px;
+}
+
+.suggestions li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* Add styles for when the input is focused or suggestions are shown */
+.search-input-wrapper:focus-within {
+    border: 2px solid #007bff;
+}
+
+.search-input:focus + .search-button {
+    background-color: #0056b3;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .search-input-wrapper {
+        max-width: 90%; /* Adjust the maximum width for smaller screens */
+    }
+}

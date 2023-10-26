@@ -1,0 +1,241 @@
+  /* BestThingsToDo.css */
+
+  .best-things-to-do-container {
+      text-align: center;
+      margin: 20px;
+      
+    }
+    
+    .best-things-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .best-thing-item {
+      margin: 10px;
+      max-width: 300px;
+      text-align: left;
+    }
+    
+    .best-thing-item img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .best-things-to-do-container h2{
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .best-things-to-do-container h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 35%;
+      width: 30%;
+      height: 2px;
+      background-color: #e22020;
+    }
+    
+    .best-thing-item h3 {
+      margin-top: 10px;
+    }
+    
+    .best-thing-item p {
+      margin-top: 5px;
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .best-thing-item {
+        max-width: 100%;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .best-thing-item {
+        margin: 10px 5px;
+      }
+    }
+
+  /* Shopping Slider */
+.shopping-slider {
+  display: flex;
+  overflow: hidden;
+  max-width: 90%;
+  margin: auto; /* Center the slider */
+}
+
+.shopping-card {
+  position: relative;
+  min-width: 100%;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  margin-right: 10px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.shopping-card img {
+  width: 100%;
+  height: 600px;
+  border-radius: 15px;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  color: #fff;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+.card-overlay h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.card-overlay p {
+  margin: 10px 0 0;
+  font-size: 1rem;
+}
+
+/* Arrow styles */
+.shopping-slider .custom-slick-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 3rem; /* Adjust the arrow size */
+  font-weight: bold;
+  color: #f00c0c;
+  cursor: pointer;
+  background: rgb(255, 255, 255);
+  padding: 15px; /* Adjust the padding */
+  border-radius: 50%;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .shopping-slider {
+    max-width: 100%;
+  }
+
+  .slick-prev, .slick-next {
+    font-size: 18px;
+  }
+}
+
+/* CulinaryEventsCalendar.css */
+
+.culinary-events-calendar-container {
+  margin: 20px;
+  text-align: center;
+}
+
+.events-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.event-card {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.event-card:hover {
+  transform: scale(1.05);
+}
+
+.event-date {
+  background-color: #e22020;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.event-details {
+  padding: 15px;
+  color: black;
+}
+
+.event-details img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.event-details p {
+  margin-top: 10px;
+}
+
+/* DistinctiveShoppingDistricts.css */
+
+.distinctive-shopping-districts-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.districts-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.card {
+  width: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.card-details {
+  padding: 15px;
+}
+
+.card-details h3 {
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+
+.card-details p {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* Slider dots customization */
+.slick-dots {
+  bottom: 10px;
+}
+
+.slick-dots li button::before {
+  font-size: 10px;
+  color: #fff;
+}
+
+.slick-dots li.slick-active button::before {
+  color: #e22020;
+}

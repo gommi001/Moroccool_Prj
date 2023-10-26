@@ -34,7 +34,7 @@ const Ifrane = () => {
 
   useEffect(() => {
     fetch(
-      'https://api.openweathermap.org/data/2.5/weather?q=Ifrane&appid=b2747cf8f61c26a33e39ddb183dc29bb&units=metric&includeAstronomy=true'
+      'https://api.openweathermap.org/data/2.5/weather?q=Volubilis&appid=b2747cf8f61c26a33e39ddb183dc29bb&units=metric&includeAstronomy=true'
     )
       .then((response) => response.json())
       .then((data) => {
@@ -105,8 +105,8 @@ const Ifrane = () => {
       </div>
       <Navbar/>
       <HeroDes
-        image=""
-        city="Ifrane"  
+        image="https://www.fes.fr/f/marruecos/fez/guia/volubilis.jpg"
+        city="Volubilis"  
       />
 
       <GridCat

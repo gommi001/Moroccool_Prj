@@ -44,6 +44,21 @@ a {
   flex: 0 0 17%;
 }
 
+.discover_img{
+  height: 150px;
+}
+
+.column {
+  display: flex;
+}
+
+.list-item {
+   /* Adjust the spacing between columns */
+}
+
+/* Adjust the styles as needed */
+
+
 #imageLogo {
   width: 175px; /* Set the width of your logo image */
   height: 70px;
@@ -99,6 +114,7 @@ a {
   border: .5px solid ;
 }
 
+
 @media (min-width: 992px) {
   .header .menu > ul > li.menu-item-has-children:hover .sub-menu {
     margin-top: 0;
@@ -123,6 +139,7 @@ a {
   max-width: 350px;
 }
 .header .menu > ul > li .sub-menu.mega-menu > .list-item > ul > li {
+  border-radius: 15px;
   line-height: 1;
   display: block;
 }
@@ -170,6 +187,7 @@ a {
   width: 100%;
   vertical-align: middle;
   margin-top: 10px;
+  border-radius: 15px;
 }
 .header .menu > ul > li .sub-menu.mega-menu > .list-item > ul > li > a:hover,
 .header .menu > ul > li .sub-menu > ul > li > a:hover,
@@ -182,6 +200,7 @@ a {
 .mobile-menu-trigger {
   display: none;
 }
+
 
 /*responsive*/
 @media (max-width: 991px) {

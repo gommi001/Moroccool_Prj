@@ -1,0 +1,45 @@
+/* ShoppingIntroduction.css */
+
+.shopping-introduction-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px auto;
+    padding: 40px;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    max-height: 350px; /* Adjust the height as needed */
+    border-radius: 15px;
+  }
+  
+  .text-container {
+    flex: 1;
+    margin-left: 40px;
+  }
+  
+  .text-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .text-container p {
+    font-size: 1.4rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .shopping-introduction-container {
+      flex-direction: column;
+    }
+  
+    .text-container {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  }
+  

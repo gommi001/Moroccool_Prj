@@ -105,7 +105,7 @@ const Chefchaouen = () => {
       </div>
       <Navbar/>
       <HeroDes
-        image=""
+        image="https://cdn.pixabay.com/photo/2017/05/10/23/06/chefchaouen-2302230_640.jpg"
         city="Chefchaouen"  
       />
 

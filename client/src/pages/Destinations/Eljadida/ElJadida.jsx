@@ -34,7 +34,7 @@ const ElJadida = () => {
 
   useEffect(() => {
     fetch(
-      'https://api.openweathermap.org/data/2.5/weather?q=&appid=b2747cf8f61c26a33e39ddb183dc29bb&units=metric&includeAstronomy=true'
+      'https://api.openweathermap.org/data/2.5/weather?q=El%20Jadida&appid=b2747cf8f61c26a33e39ddb183dc29bb&units=metric&includeAstronomy=true'
     )
       .then((response) => response.json())
       .then((data) => {
@@ -105,8 +105,8 @@ const ElJadida = () => {
       </div>
       <Navbar/>
       <HeroDes
-        image=""
-        city="ElJadida"  
+        image="https://cdn.pixabay.com/photo/2020/03/26/15/49/statue-4970801_1280.jpg"
+        city="El Jadida"  
       />
 
       <GridCat

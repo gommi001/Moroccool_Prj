@@ -162,7 +162,6 @@ const Casablanca = () => {
       />
 
       
-
 {/* Map Section */}
     <h1>Casablanca's Map</h1>
     <div style={{width: "100%"}}>

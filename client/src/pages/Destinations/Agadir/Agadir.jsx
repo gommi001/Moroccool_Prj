@@ -6,7 +6,7 @@ import CafRecommend from '../../../components/CafRecommend'
 import CloudIcon from '@mui/icons-material/Cloud';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import CloudTwoToneIcon from '@mui/icons-material/CloudTwoTone';
-import './kenitra.scss'
+import './agadir.scss'
 import axios from 'axios'
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
@@ -19,7 +19,8 @@ import Foot from "../../../components/foot/Footer"
 import FooterBanner from "../../../components/footbanner/FooterBanner"
 
 
-const Kenitra = () => {
+
+const Agadir = () => {
   
   const [data, setData] = useState({});
 
@@ -34,7 +35,7 @@ const Kenitra = () => {
 
   useEffect(() => {
     fetch(
-      'https://api.openweathermap.org/data/2.5/weather?q=Kenitra&appid=b2747cf8f61c26a33e39ddb183dc29bb&units=metric&includeAstronomy=true'
+      'https://api.openweathermap.org/data/2.5/weather?q=Agadir&appid=b2747cf8f61c26a33e39ddb183dc29bb&units=metric&includeAstronomy=true'
     )
       .then((response) => response.json())
       .then((data) => {
@@ -66,7 +67,7 @@ const Kenitra = () => {
 
 
   return (
-    <div className='Kenitra'>
+    <div className='Assilah'>
       <div className="app1">
         <div className="container1">
           <div className="top1">
@@ -105,14 +106,14 @@ const Kenitra = () => {
       </div>
       <Navbar/>
       <HeroDes
-        image="https://images.unsplash.com/photo-1624363414140-1f192a034b1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a2VuaXRyYXxlbnwwfDB8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
-        city="Kenitra"  
+        image="https://images.unsplash.com/photo-1536868313473-7480e7c169f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWdhZGlyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+        city="Agadir"  
       />
 
       <GridCat
-        link1='/things/cafes/cafeKenitra'
-        link2='/events/eventKenitra'
-        link3='/things/hotels/hotelKenitra'
+        link1='/things/cafes/cafeagadir'
+        link2='/events/eventagadir'
+        link3='/things/hotels/hotelagadir'
       />
 
       <CafRecommend
@@ -123,7 +124,7 @@ const Kenitra = () => {
 
 
       <Programs
-      city="Kenitra"
+        city="Assilah"
         img1='https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9yb2Njb3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
         title1='Mohammedia'
         text1='Cras mattis consectetur purus sit amet fermentum.
@@ -131,7 +132,7 @@ const Kenitra = () => {
         Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
         Praesent commodo cursus magna, vel scelerisque nisl consectetur et.'
         link1='/destination/fes'
-
+        
 
         img2='https://images.unsplash.com/photo-1539020140153-e479b8c22e70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG1vcm9jY298ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'
         title2='El-Jadida'
@@ -140,7 +141,7 @@ const Kenitra = () => {
         Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
         Praesent commodo cursus magna, vel scelerisque nisl consectetur et.'
         link2='/destination/fes'
-
+        
 
         img3='https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bW9yb2Njb3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
         title3='Rabat'
@@ -153,7 +154,7 @@ const Kenitra = () => {
       />
 
       <Gallery
-        city = "Kenitra"
+        city = "Assilah"
         img1 = "https://images.unsplash.com/photo-1581443459255-e895f2a4222f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FzYWJsYW5jYXxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60"
         img2 = "https://images.unsplash.com/photo-1635182584134-04cd1e643289?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGNhc2FibGFuY2F8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
         img3 = "https://cdn.pixabay.com/photo/2022/08/18/14/29/hassan-ii-mosque-7395036__340.jpg"
@@ -165,9 +166,9 @@ const Kenitra = () => {
       
 
 {/* Map Section */}
-    <h1>Kenitra's Map</h1>
+    <h1>Assilah's Map</h1>
     <div style={{width: "100%"}}>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106376.56000706578!2d-7.669394509822682!3d33.57240323277928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd4778aa113b%3A0xb06c1d84f310fd3!2sKenitra!5e0!3m2!1sen!2sma!4v1682189348085!5m2!1sen!2sma" width="100%" height="550"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106376.56000706578!2d-7.669394509822682!3d33.57240323277928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd4778aa113b%3A0xb06c1d84f310fd3!2sAssilah!5e0!3m2!1sen!2sma!4v1682189348085!5m2!1sen!2sma" width="100%" height="550"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
 
@@ -178,4 +179,4 @@ const Kenitra = () => {
   )
 }
 
-export default Kenitra
+export default Agadir
