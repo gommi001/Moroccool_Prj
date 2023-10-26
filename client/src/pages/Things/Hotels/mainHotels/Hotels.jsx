@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useEffect} from 'react'
+import { useLocation } from 'react-router-dom';
 import FindHot from '../../../../components/mainHotels/HotelsDestinations/FindHot'
 import FindTypes from '../../../../components/mainHotels/hoteltypes/FindTypes'
 import Navbar from '../../../../components/navbar/Navbar'
@@ -13,6 +14,10 @@ import FooterBanner from '../../../../components/footbanner/FooterBanner'
 
 
 const Hotels = () => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <div className='hotels'> 
       <Navbar/>

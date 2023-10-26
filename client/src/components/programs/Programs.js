@@ -31,8 +31,8 @@ function Programs(props) {
 
   return (
     <div className="trip">
-          <h1>Nearby Cities</h1>
-          <p>You can discover the cities nearby {props.city}</p>
+          <h1>Villes Proches</h1>
+          <p>Vous pouvez découvrir les villes voisines {props.city}</p>
           <div className="tripcard">
                   
        <div className="t-card" >
