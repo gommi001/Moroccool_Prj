@@ -1,0 +1,107 @@
+ /* Shopping Slider */
+ .shopping-slider {
+  display: flex;
+  overflow: hidden;
+  max-width: 80%;
+  margin: 0 auto; /* Center the slider */
+}
+
+.shopping-card {
+  position: relative;
+  min-width: 100%;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  margin-right: 10px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.shopping-card img {
+  width: 100%;
+  height: 600px;
+  border-radius: 15px;
+  object-fit: fill;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  color: #fff;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+.unesco-info {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+
+  .unesco-text {
+    margin-left: 5px;
+    font-size: 16px;
+  }
+
+  .unesco-date {
+    margin-left: 5px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+.titre_Culture{
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.titre_Culture::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 35%;
+  width: 30%;
+  height: 2px;
+  background-color: #e22020;
+}
+
+.card-overlay h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.card-overlay p {
+  margin: 10px 0 0;
+  font-size: 1rem;
+}
+
+/* Arrow styles */
+.shopping-slider .custom-slick-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 3rem; /* Adjust the arrow size */
+  font-weight: bold;
+  color: #f00c0c;
+  cursor: pointer;
+  background: rgb(255, 255, 255);
+  padding: 15px; /* Adjust the padding */
+  border-radius: 50%;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .shopping-slider {
+    max-width: 100%;
+  }
+
+  .slick-prev, .slick-next {
+    font-size: 18px;
+  }
+}
