@@ -4,10 +4,9 @@ import Dest from '../../../components/dest/Dest'
 import Navbar from '../../../components/navbar/Navbar'
 import Foot from "../../../components/foot/Footer"
 import FooterBanner from "../../../components/footbanner/FooterBanner"
-import Hero from '../../../components/hero/Hero'
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import HelloHero from '../../../components/helloHero/HelloHero'
 import './maindes.scss'
-import SearchOutlined from '@mui/icons-material/SearchOutlined'
+
 
 
 const MainDes = () => {
@@ -53,9 +52,7 @@ const MainDes = () => {
   return (
     <div className='mainDes'>
       <Navbar/>
-      <Hero
-        img='https://images.pexels.com/photos/388415/pexels-photo-388415.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-      />
+      <HelloHero/>
 
       <Dest/> 
 
